@@ -41,6 +41,14 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - Prices 133/133 within 1% of the answer key; coverage 150/150 (every quoted / not-quoted call right); facts and flags 21/21 (footnote discount, expired cert date, 4 handwritten values, 2 alternates, USD, terms).
 - First run scored 129/150 on coverage: the gap was description-only items, which led to the AI matching step. That's the eval loop working as intended.
 
+## Review and comparison screens
+- **Flags are grouped, not listed per line.** Balaji's conditional discount touches 30 lines but is one decision, so it's one review card. 106 flagged cells collapse into 14 decisions.
+- **Three buyer actions:** approve, correct the value, or exclude the line. Decisions sit on top of the extracted data and never overwrite it; each one is logged to a corrections file that later becomes test cases.
+- **The quality gate judges certificates by date, not by the vendor's "yes".** Balaji says yes and attaches a certificate that expired 15 days before the due date: conditional. Kraftline states a valid number but attaches nothing: cleared, with a note. Om Sai's "same as last year" is resolved to last year's answers on file: cleared, marked stale.
+- **"Who can win a line?" is a toggle on the comparison:** cleared only, cleared + conditional, or all. Flipping it is how the buyer sees what quality costs (₹407.8 L → ₹394.9 L).
+- **An unmarked price inherits the response's currency, with a review flag.** Gupta's handwritten pad price has no ₹ next to it; the rest of his card is INR.
+- **Every price cell opens its working:** the ledger, the vendor's own words, match confidence and flags.
+
 ## Normalization (deterministic)
 - **One comparable basis:** ₹ per piece, landed at Bawal, before GST.
 - **Every step recorded in a ledger** the buyer can open from any cell (e.g. ₹49.02/kg incl. GST → ÷1.18 → −3% → × 0.566 kg = ₹22.81).

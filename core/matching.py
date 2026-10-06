@@ -143,7 +143,7 @@ def match_vendor(resp: VendorResponse, lines: list[RFQLine],
             if ln.code in taken:
                 continue
             matches.append(Match(rfq_code=ln.code, item_index=i, method="remaining_rule", confidence=0.65,
-                                 reason=f"Interpreted '{it.scope_description}' as covering {ln.code}"))
+                                 reason=f"Interpreted '{it.scope_description}' as covering this line"))
             taken.add(ln.code)
         used_items.add(i)
 

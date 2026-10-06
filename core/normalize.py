@@ -63,13 +63,18 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
     if item.price_unit == PriceUnit.same_as_last_year:
         v = line.ly_price
         S(Step(f"'{item.price_text}' → FY26 contract price", v, "₹/pc"))
-        F(Flag("review", f"Resolved '{item.scope_description or item.price_text}' to last year's ₹{line.ly_price:.2f}/pc"))
+        F(Flag("review", f"Resolved '{item.scope_description or item.price_text}' to last year's contract prices"))
     else:
         if item.price_value is None or item.price_unit == PriceUnit.unknown:
             F(Flag("risk", "Price or unit could not be read"))
             return out
         v = item.price_value
         cur = item.currency
+        if cur == "unknown":
+            known = [i.currency for i in resp.items if i.currency in ("INR", "USD")]
+            if known:
+                cur = max(set(known), key=known.count)
+                F(Flag("review", f"Currency not written next to this price; assumed {cur} like the rest of the response"))
         S(Step(f"Quoted: {item.price_text}", v, f"{cur} {item.price_unit.value.replace('_', ' ')}"))
 
         if cur == "USD":
@@ -85,7 +90,7 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
             v /= 1000; S(Step("Per 1,000 → per piece", v, "₹/pc"))
         elif item.price_unit == PriceUnit.per_kg:
             v *= w; S(Step(f"× box weight {w:.3f} kg", v, "₹/pc"))
-            F(Flag("info", f"Per-kg rate converted using our computed box weight ({w*1000:.0f} g)"))
+            F(Flag("info", "Per-kg rate converted using our computed box weight"))
 
         if item.scope == "category" and item.price_unit == PriceUnit.per_kg and line.print_colours:
             add = a.ly_print_adder.get(line.print_colours, 0.0)
@@ -142,8 +147,11 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
         F(Flag("risk", f"Size differs by {match.size_deviation*100:.1f}% from our spec"))
     elif match.method == "spec" and match.size_deviation:
         F(Flag("info", f"Matched by size ({match.size_deviation*100:.1f}% max deviation)"))
-    if match.method in ("category_rule", "remaining_rule"):
+    if match.method == "category_rule" or (match.method == "remaining_rule"
+                                           and item.price_unit != PriceUnit.same_as_last_year):
         F(Flag("review", match.reason))
+    if match.method == "description":
+        F(Flag("info" if match.confidence >= 0.9 else "review", match.reason))
 
     # --- sanity vs last year --------------------------------------------------
     ratio = v / line.ly_price - 1
