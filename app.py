@@ -23,6 +23,7 @@ from core.compare import ALLOWED, OPEN, Decisions, award_total, build, l1, log_c
 from core.draft import RFQDraft
 from core.extract import INBOX, MODEL, OUT, VENDOR_FILES, _api_key, load_ai_matches, load_extracted, read_and_match
 from core.rfq import Assumptions
+from core.voice import voice_input
 
 st.set_page_config(page_title="RFQ Copilot", layout="wide")
 
@@ -44,6 +45,7 @@ ss.setdefault("copilot_msgs", [])    # full API context for the co-pilot
 ss.setdefault("analyst_msgs", [])    # full API context for the analyst
 ss.setdefault("read_status", {})
 ss.setdefault("mic_n", 0)
+
 ss.setdefault("decisions", Decisions())
 _DEF = Assumptions()
 WIDGETS = {"a_fx": "fx_usd_inr", "a_freight": "freight_per_kg", "a_gst": "gst_rate",
@@ -145,16 +147,25 @@ def send_chat(text: str):
                                                      "Try again in a moment."})
 
 
-def transcribe(wav: bytes) -> str | None:
-    """Speech → text with Google's free web speech service, tuned for Indian English."""
-    import speech_recognition as sr
-    r = sr.Recognizer()
-    with sr.AudioFile(io.BytesIO(wav)) as src:
-        audio = r.record(src)
+def transcribe(wav: bytes) -> tuple[str | None, str | None]:
+    """Backup path: server-side speech → text (Google's free web speech service). Returns (text, error)."""
     try:
-        return r.recognize_google(audio, language="en-IN")
-    except Exception:
-        return None
+        import speech_recognition as sr
+        r = sr.Recognizer()
+        with sr.AudioFile(io.BytesIO(wav)) as src:
+            audio = r.record(src)
+        return r.recognize_google(audio, language="en-IN"), None
+    except Exception as e:
+        return None, f"{type(e).__name__}: {e}"[:200]
+
+
+def voice_command(text: str):
+    with st.spinner(f"“{text}”"):
+        send_chat(text)
+    for m in reversed(ss.chat):
+        if m["role"] == "user":
+            m["voice"] = True
+            break
 
 
 def render_display(x: dict, i: int):
@@ -197,18 +208,23 @@ with st.sidebar:
                     send_chat(s_)
                 st.rerun()
     can_chat = ss.stage in ("draft", "read") and api_key_present()
-    voice = st.audio_input("Speak to the co-pilot", key=f"mic-{ss.mic_n}", disabled=not can_chat)
-    if voice is not None:
-        with st.spinner("Listening…"):
-            heard = transcribe(voice.getvalue())
-        ss.mic_n += 1          # fresh recorder for the next command
-        if heard:
-            with st.spinner(f"“{heard}”"):
-                send_chat(heard)
-            ss.chat[-2]["voice"] = True
-        else:
-            ss.chat.append({"role": "assistant", "text": "I didn't catch that. Try again a little closer to the mic, or type it."})
+    # Primary: the browser's own speech recognition (Chrome/Edge), live words as you speak
+    reason = None if can_chat else ("Add the API key to talk to the co-pilot." if not api_key_present()
+                                    else "Voice opens again once replies are read.")
+    said = voice_input(disabled=not can_chat, reason=reason)
+    if said:
+        voice_command(said)
         st.rerun()
+    # Backup: record, then transcribe on the server
+    with st.expander("Voice button not working? Record instead"):
+        rec = st.audio_input("Record a command", key=f"mic-{ss.mic_n}", disabled=not can_chat)
+        if rec is not None:
+            heard, err = transcribe(rec.getvalue())
+            ss.mic_n += 1
+            if heard:
+                voice_command(heard)
+                st.rerun()
+            st.error(f"Couldn't transcribe that ({err}). Please type it instead.")
     prompt = st.chat_input("…or type here" if can_chat else "Waiting for responses…", disabled=not can_chat)
     if prompt:
         with st.spinner("Thinking…"):
