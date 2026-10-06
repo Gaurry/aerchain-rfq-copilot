@@ -6,3 +6,4 @@ python-docx
 pydantic
 duckdb
 plotly
+SpeechRecognition

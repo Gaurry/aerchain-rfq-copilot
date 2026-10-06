@@ -51,7 +51,7 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 
 ## The chat panel and the guided flow
 - **One chat panel, two jobs.** Before sending, it's the RFQ co-pilot; once responses are read, the same panel becomes the analyst. The buyer never switches tools.
-- **"Talks an RFx into existence" = conversational chat, typed.** Voice was considered (browser speech-to-text, free) and left out to keep to the brief and avoid a mic failing in the demo room.
+- **"Talks an RFx into existence" = voice first, typing as fallback.** The buyer records a command with the mic in the chat panel; Google's free web speech service (tuned for Indian English) turns it into text, and the same co-pilot handles it. Typing stays available because demo rooms are noisy and mics fail. Claude's API doesn't take audio directly, so speech-to-text is a separate, swappable step (Whisper would be the production choice for Hinglish).
 - **The co-pilot edits the draft only through tools** (load last year, change quantity, add or remove a line, set terms, questionnaire). It can't claim a change it didn't make, and every change lands in a visible change log.
 - **It asks instead of inventing.** Asked to add a 2 kg atta shipper without a size, it asked for the size. Given inches, it converted to mm and said so. Asked to make ISO mandatory, it checked the questionnaire first and found it already was.
 - **The analyst never does maths in its head.** It calls tools that reuse the grid's own functions (cheapest per line, award scenario, explain a price) and a calculator for differences. The chat and the grid can't disagree.

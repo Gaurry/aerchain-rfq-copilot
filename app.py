@@ -43,6 +43,7 @@ ss.setdefault("chat", [])            # what the buyer sees
 ss.setdefault("copilot_msgs", [])    # full API context for the co-pilot
 ss.setdefault("analyst_msgs", [])    # full API context for the analyst
 ss.setdefault("read_status", {})
+ss.setdefault("mic_n", 0)
 ss.setdefault("decisions", Decisions())
 _DEF = Assumptions()
 WIDGETS = {"a_fx": "fx_usd_inr", "a_freight": "freight_per_kg", "a_gst": "gst_rate",
@@ -144,6 +145,18 @@ def send_chat(text: str):
                                                      "Try again in a moment."})
 
 
+def transcribe(wav: bytes) -> str | None:
+    """Speech → text with Google's free web speech service, tuned for Indian English."""
+    import speech_recognition as sr
+    r = sr.Recognizer()
+    with sr.AudioFile(io.BytesIO(wav)) as src:
+        audio = r.record(src)
+    try:
+        return r.recognize_google(audio, language="en-IN")
+    except Exception:
+        return None
+
+
 def render_display(x: dict, i: int):
     if x["kind"] == "chart":
         fig = px.bar(x=x["labels"], y=x["values"], labels={"x": "", "y": x["unit"]}, title=x["title"])
@@ -168,7 +181,7 @@ with st.sidebar:
         st.rerun()
     for i, m in enumerate(ss.chat):
         with st.chat_message(m["role"]):
-            st.markdown(m["text"])
+            st.markdown(("🎙️ " if m.get("voice") else "") + m["text"])
             if m.get("changes"):
                 st.caption("Changed: " + " · ".join(m["changes"]))
             for j, x in enumerate(m.get("displays", [])):
@@ -184,7 +197,19 @@ with st.sidebar:
                     send_chat(s_)
                 st.rerun()
     can_chat = ss.stage in ("draft", "read") and api_key_present()
-    prompt = st.chat_input("Type to the co-pilot" if can_chat else "Waiting for responses…", disabled=not can_chat)
+    voice = st.audio_input("Speak to the co-pilot", key=f"mic-{ss.mic_n}", disabled=not can_chat)
+    if voice is not None:
+        with st.spinner("Listening…"):
+            heard = transcribe(voice.getvalue())
+        ss.mic_n += 1          # fresh recorder for the next command
+        if heard:
+            with st.spinner(f"“{heard}”"):
+                send_chat(heard)
+            ss.chat[-2]["voice"] = True
+        else:
+            ss.chat.append({"role": "assistant", "text": "I didn't catch that. Try again a little closer to the mic, or type it."})
+        st.rerun()
+    prompt = st.chat_input("…or type here" if can_chat else "Waiting for responses…", disabled=not can_chat)
     if prompt:
         with st.spinner("Thinking…"):
             send_chat(prompt)
