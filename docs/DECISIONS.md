@@ -49,6 +49,14 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - **An unmarked price inherits the response's currency, with a review flag.** Gupta's handwritten pad price has no ₹ next to it; the rest of his card is INR.
 - **Every price cell opens its working:** the ledger, the vendor's own words, match confidence and flags.
 
+## Simplified flow (after first review of the app)
+- **One screen per step**, not seven tabs: Draft RFQ → Send → Responses → Review → Compare → Award. Earlier steps stay clickable; later ones unlock in order.
+- **Send shows the actual message per vendor** (email, or WhatsApp for Gupta) with the RFQ Excel attached as a real file: line items plus the questionnaire sheet.
+- **Responses shows each reply exactly as it arrived:** the Excel sheets, the PDF pages and the certificate, the Word letter, the phone photo, the one-line email. The point is to make the mess visible before the AI tidies it.
+- **Review comes before Compare, strictly.** Compare unlocks only when every item is approved, corrected, excluded, or sent back to the vendor. Comparing numbers you haven't checked is how bad awards happen.
+- **"Ask vendor" is a fourth review action.** Asks collect per vendor into one email, drafted by the AI from the vendor's own words ("You wrote 'freight extra'. Please give your freight cost to Bawal per kg or per trip"), editable, then sent (stubbed). Those lines show as "waiting on vendor" in Compare and in the award's before-signing list. One email per vendor, not one per flag.
+- **The analyst opens after the review**, so every answer runs on numbers the buyer has already checked.
+
 ## The chat panel and the guided flow
 - **One chat panel, two jobs.** Before sending, it's the RFQ co-pilot; once responses are read, the same panel becomes the analyst. The buyer never switches tools.
 - **"Talks an RFx into existence" = voice first, typing as fallback.** The buyer clicks Speak in the chat panel and talks; the browser's own speech recognition (Chrome/Edge, Indian English) shows the words live and sends them when the buyer pauses. It runs on the page, needs no server audio handling and no extra key. A record-and-transcribe backup sits underneath and shows the real error if it fails. Typing stays available because demo rooms are noisy and mics fail. Claude's API doesn't take audio directly, so speech-to-text is a separate, swappable step (Whisper would be the production choice for Hinglish).

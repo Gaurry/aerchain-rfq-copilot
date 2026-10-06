@@ -27,6 +27,7 @@ class Decisions:
     approved: set = field(default_factory=set)      # {(vendor, code, flag_text)}
     corrected: dict = field(default_factory=dict)   # {(vendor, code): price}
     excluded: set = field(default_factory=set)      # {(vendor, code)}
+    asked: set = field(default_factory=set)         # {(vendor, code, flag_text)} sent back to the vendor
 
 
 @dataclass
@@ -43,7 +44,12 @@ class Comparison:
         c = self.cells.get((vendor, code))
         if c is None:
             return []
-        return [f for f in c.flags if f.severity in OPEN and (vendor, code, f.text) not in d.approved]
+        return [f for f in c.flags if f.severity in OPEN and (vendor, code, f.text) not in d.approved
+                and (vendor, code, f.text) not in d.asked]
+
+    def awaiting_vendor(self, vendor: str, code: str, d: Decisions) -> list[Flag]:
+        c = self.cells.get((vendor, code))
+        return [] if c is None else [f for f in c.flags if (vendor, code, f.text) in d.asked]
 
 
 def build(resps: dict[str, VendorResponse], ai: dict[str, list[AIMatch]], lines: list[RFQLine],
