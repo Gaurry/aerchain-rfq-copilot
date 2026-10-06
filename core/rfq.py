@@ -25,8 +25,8 @@ class RFQLine:
     print_colours: int
     annual_qty: int
     box_weight_kg: float
-    ly_rate_per_kg: float
-    ly_price: float
+    ly_rate_per_kg: float | None
+    ly_price: float | None          # None = new line, no history
     notes: str = ""
 
     @property
@@ -35,7 +35,7 @@ class RFQLine:
 
     @property
     def ly_spend(self) -> float:
-        return self.ly_price * self.annual_qty
+        return (self.ly_price or 0.0) * self.annual_qty
 
 
 @dataclass

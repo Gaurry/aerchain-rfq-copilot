@@ -1,11 +1,11 @@
 {
  "meta": {
   "model": "claude-sonnet-5-5",
-  "seconds": 36.8,
+  "seconds": 34.1,
   "input_tokens": 1422,
-  "output_tokens": 6888,
+  "output_tokens": 6451,
   "stop_reason": "tool_use",
-  "extracted_at": "2026-10-06T13:28:44.328733+00:00"
+  "extracted_at": "2026-10-06T14:02:16.116903+00:00"
  },
  "response": {
   "vendor_name": "Pacific",
@@ -43,10 +43,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-301, CB-302 and CB-303), we are pleased to offer USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "quote": "USD 0.171, USD 0.132 and USD 0.193 respectively",
      "location": "¶13"
     },
-    "notes": null
+    "notes": "Mapped by 'respectively' to CB-301, CB-302, CB-303 in order."
    },
    {
     "vendor_ref": "CB-302",
@@ -69,7 +69,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "quote": "USD 0.132",
      "location": "¶13"
     },
     "notes": null
@@ -95,14 +95,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "quote": "USD 0.193",
      "location": "¶13"
     },
     "notes": null
    },
    {
     "vendor_ref": null,
-    "description": "Namkeen 150g shipper",
+    "description": "Namkeen range – 150g shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -121,14 +121,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "the 150g shipper, the 400g shipper and the chips family pack – would be USD 0.219, USD 0.273 and USD 0.337",
+     "quote": "The namkeen range – the 150g shipper, the 400g shipper and the chips family pack – would be USD 0.219, USD 0.273 and USD 0.337",
      "location": "¶13"
     },
-    "notes": null
+    "notes": "Ply not stated for namkeen range."
    },
    {
     "vendor_ref": null,
-    "description": "Namkeen 400g shipper",
+    "description": "Namkeen range – 400g shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -147,14 +147,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.219, USD 0.273 and USD 0.337",
+     "quote": "USD 0.273",
      "location": "¶13"
     },
     "notes": null
    },
    {
     "vendor_ref": null,
-    "description": "Chips family pack shipper",
+    "description": "Namkeen range – chips family pack",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -173,7 +173,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.219, USD 0.273 and USD 0.337",
+     "quote": "USD 0.337",
      "location": "¶13"
     },
     "notes": null
@@ -206,7 +206,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "E-commerce mailer, small",
+    "description": "Small e-commerce mailer",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -232,7 +232,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "E-commerce mailer, medium",
+    "description": "Medium e-commerce mailer",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -251,7 +251,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.093 and USD 0.143",
+     "quote": "USD 0.143",
      "location": "¶13"
     },
     "notes": null
@@ -280,11 +280,11 @@
      "quote": "The plain filler box would be USD 0.142",
      "location": "¶13"
     },
-    "notes": "'Plain' is part of the item name; vendor does not explicitly say rates exclude printing."
+    "notes": "Item described as 'plain'; vendor does not separately state that the rate excludes printing."
    },
    {
     "vendor_ref": null,
-    "description": "Oil shipper 1L pack",
+    "description": "5-ply oil shipper 1L",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -310,7 +310,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Oil shipper 5L pack",
+    "description": "5-ply oil shipper 5L",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -329,14 +329,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.283 and USD 0.413",
+     "quote": "USD 0.413",
      "location": "¶14"
     },
     "notes": null
    },
    {
     "vendor_ref": null,
-    "description": "Ghee jar shipper",
+    "description": "5-ply ghee jar shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -362,7 +362,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Pickle shipper",
+    "description": "5-ply pickle shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -388,7 +388,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Sauce bottle shipper",
+    "description": "5-ply sauce bottle shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -414,7 +414,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Juice tetra shipper",
+    "description": "5-ply juice tetra shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -440,7 +440,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Atta 5kg shipper",
+    "description": "5-ply atta 5kg shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -466,7 +466,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Atta 10kg shipper",
+    "description": "5-ply atta 10kg shipper",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -485,14 +485,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.480 and USD 0.540",
+     "quote": "USD 0.540",
      "location": "¶14"
     },
     "notes": null
    },
    {
     "vendor_ref": null,
-    "description": "Rice master carton",
+    "description": "5-ply rice master carton",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -518,7 +518,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Export master carton",
+    "description": "5-ply export master carton",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -544,7 +544,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Gift hamper outer, 4-colour print",
+    "description": "5-ply gift hamper outer, 4-colour print",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -570,7 +570,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Pallet tray",
+    "description": "5-ply pallet tray",
     "product_type": "tray",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -622,7 +622,7 @@
    },
    {
     "vendor_ref": "CB-702",
-    "description": "Heavy-duty export carton (CB-702)",
+    "description": "7-ply heavy-duty export carton (CB-702)",
     "product_type": "box",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -644,7 +644,7 @@
      "quote": "the heavy-duty export carton (CB-702) at USD 1.464",
      "location": "¶15"
     },
-    "notes": "7-ply is stated for the bulk carton CB-701; the CB-702 sentence is part of the same '7-ply' heavy-duty highlight but ply is not stated explicitly for CB-702."
+    "notes": null
    },
    {
     "vendor_ref": "DC-101",
@@ -670,7 +670,7 @@
      "quote": "The counter display tray (DC-101) is USD 0.087",
      "location": "¶15"
     },
-    "notes": "Vendor calls it a 'counter display tray'; product type set to die_cut based on DC code."
+    "notes": null
    },
    {
     "vendor_ref": "DC-102",
@@ -700,7 +700,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Partition for oil shipper",
+    "description": "Partition for the oil shipper",
     "product_type": "partition",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -722,11 +722,11 @@
      "quote": "Partitions for the oil shipper and the sauce shipper are USD 0.046 and USD 0.063 per set",
      "location": "¶16"
     },
-    "notes": "Vendor unit is 'per set'; recorded as per_piece since no other unit fits. Oil pack size (1L/5L) not specified."
+    "notes": "Vendor unit is 'per set'; recorded as per_piece (one set) — unit label is 'per set'."
    },
    {
     "vendor_ref": null,
-    "description": "Partition for sauce shipper",
+    "description": "Partition for the sauce shipper",
     "product_type": "partition",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -745,7 +745,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.046 and USD 0.063 per set",
+     "quote": "USD 0.063 per set",
      "location": "¶16"
     },
     "notes": "Vendor unit is 'per set'."
@@ -771,10 +771,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "USD 0.026 for the 400x300 size and USD 0.101 for the 600x400 size",
+     "quote": "Layer pads would be USD 0.026 for the 400x300 size and USD 0.101 for the 600x400 size",
      "location": "¶16"
     },
-    "notes": null
+    "notes": "Size unit not stated by vendor."
    },
    {
     "vendor_ref": null,
@@ -800,13 +800,13 @@
      "quote": "USD 0.101 for the 600x400 size",
      "location": "¶16"
     },
-    "notes": null
+    "notes": "Size unit not stated by vendor."
    }
   ],
   "questionnaire": [
    {
     "question_no": 1,
-    "answer_text": "the relevant group-level quality certifications are in place. (No ISO 9001:2015 certificate named or attached.)",
+    "answer_text": "the relevant group-level quality certifications are in place",
     "status": "vague",
     "evidence": {
      "quote": "the relevant group-level quality certifications are in place",
@@ -818,13 +818,13 @@
     "answer_text": "Test reports are available as per standard industry practice.",
     "status": "vague",
     "evidence": {
-     "quote": "Test reports are available as per standard industry practice",
+     "quote": "Test reports are available as per standard industry practice.",
      "location": "¶18"
     }
    },
    {
     "question_no": 3,
-    "answer_text": "We have ample capacity to support your requirement (no MT figure).",
+    "answer_text": "We have ample capacity to support your requirement",
     "status": "vague",
     "evidence": {
      "quote": "We have ample capacity to support your requirement",
@@ -833,7 +833,7 @@
    },
    {
     "question_no": 4,
-    "answer_text": "Delivery lead time would be 14 to 21 days from receipt of PO, depending on our production schedule.",
+    "answer_text": "14 to 21 days from receipt of PO, depending on our production schedule",
     "status": "no",
     "evidence": {
      "quote": "Delivery lead time would be 14 to 21 days from receipt of PO",
@@ -842,7 +842,7 @@
    },
    {
     "question_no": 5,
-    "answer_text": "all our inks are compliant with applicable norms (no food-safe / low-migration claim stated).",
+    "answer_text": "all our inks are compliant with applicable norms",
     "status": "vague",
     "evidence": {
      "quote": "all our inks are compliant with applicable norms",
@@ -854,7 +854,7 @@
     "answer_text": "Payment terms are 30 days from invoice.",
     "status": "no",
     "evidence": {
-     "quote": "Payment terms are 30 days from invoice",
+     "quote": "Payment terms are 30 days from invoice.",
      "location": "¶17"
     }
    },
@@ -869,7 +869,7 @@
    },
    {
     "question_no": 8,
-    "answer_text": "prices are subject to revision in line with market conditions (no defined mechanism).",
+    "answer_text": "prices are subject to revision in line with market conditions",
     "status": "vague",
     "evidence": {
      "quote": "prices are subject to revision in line with market conditions",
@@ -878,10 +878,10 @@
    },
    {
     "question_no": 9,
-    "answer_text": "We take great pride in our quality record. (No rejection rate given.)",
-    "status": "vague",
+    "answer_text": "Not addressed; only 'We take great pride in our quality record.'",
+    "status": "not_answered",
     "evidence": {
-     "quote": "We take great pride in our quality record",
+     "quote": "We take great pride in our quality record.",
      "location": "¶18"
     }
    }
@@ -894,19 +894,20 @@
     "location": "¶12"
    },
    {
-    "quote": "Payment terms are 30 days from invoice. This offer is valid for 15 days, given the current volatility in global kraft paper markets, and prices are subject to revision in line with market conditions.",
+    "quote": "Delivery lead time would be 14 to 21 days from receipt of PO, depending on our production schedule. Payment terms are 30 days from invoice. This offer is valid for 15 days, given the current volatility in global kraft paper markets, and prices are subject to revision in line with market conditions.",
     "location": "¶17"
    }
   ],
   "extraction_warnings": [
-   "All prices are in USD per piece; vendor will invoice in INR at the RBI reference rate on invoice date, so the INR amount is not fixed.",
-   "Most items are identified by description only; the vendor gave codes only for CB-301/302/303, CB-701/702, DC-101/102. No codes were assigned to other items by me.",
-   "Ply stated explicitly only for CB-301–303 (3-ply), the '5-ply range' paragraph, and CB-701 (7-ply). Ply for CB-702 and the namkeen/promo/mailer/filler items is not stated.",
-   "No paper GSM/BF, box sizes or print colours given (except 4-colour for gift hamper outer).",
-   "Partition prices are stated 'per set'; recorded as per_piece.",
-   "Validity of 15 days with 'prices subject to revision in line with market conditions' – price firmness is unclear.",
-   "No certificate attached; only 'group-level quality certifications' mentioned without standard, number or date.",
-   "Vendor is a subsidiary of a Singapore group; certifications are described at group level, not for this entity."
+   "All prices are in USD per piece; invoicing will be in INR at the RBI reference rate on invoice date, so INR value is not fixed.",
+   "GST rate percentage not stated; only 'GST will be charged extra as applicable'.",
+   "Vendor gave no sizes, GSM/BF or print-colour counts for most items (only the 4-colour gift hamper); items without vendor codes are identified by vendor description only and mapping to our CB codes is by wording/order.",
+   "Ply for the namkeen range, promo box, mailers and filler box is not stated; 3-ply was stated only for CB-301/302/303.",
+   "Namkeen prices mapped by order: 150g, 400g, chips family pack.",
+   "Partition prices are quoted 'per set'; recorded as per_piece with note.",
+   "Prices 'subject to revision in line with market conditions' despite 15-day validity; escalation mechanism not defined.",
+   "No certificate copy attached and no ISO 9001 number or date given; only 'group-level quality certifications' mentioned.",
+   "No discounts or per-colour adders stated; printing inclusion in rates not explicitly stated."
   ]
  },
  "ai_matches": [
@@ -914,127 +915,127 @@
    "item_index": 3,
    "rfq_code": "CB-304",
    "confidence": "high",
-   "reason": "\"Namkeen 150g shipper\" matches CB-304 by name and sequence."
+   "reason": "'Namkeen range – 150g shipper' matches Namkeen 150g shipper."
   },
   {
    "item_index": 4,
    "rfq_code": "CB-305",
    "confidence": "high",
-   "reason": "\"Namkeen 400g shipper\" matches CB-305."
+   "reason": "'400g shipper' matches Namkeen 400g shipper."
   },
   {
    "item_index": 5,
    "rfq_code": "CB-306",
    "confidence": "high",
-   "reason": "\"Chips family pack shipper\" matches CB-306."
+   "reason": "'chips family pack' matches Chips family pack shipper."
   },
   {
    "item_index": 6,
    "rfq_code": "CB-307",
    "confidence": "high",
-   "reason": "\"Promo box\" matches Sample/promo box CB-307."
+   "reason": "'Promo box' matches Sample/promo box."
   },
   {
    "item_index": 7,
    "rfq_code": "CB-308",
    "confidence": "high",
-   "reason": "\"E-commerce mailer, small\" matches CB-308."
+   "reason": "'Small e-commerce mailer' matches E-com mailer small."
   },
   {
    "item_index": 8,
    "rfq_code": "CB-309",
    "confidence": "high",
-   "reason": "\"E-commerce mailer, medium\" matches CB-309."
+   "reason": "'Medium e-commerce mailer' matches E-com mailer medium."
   },
   {
    "item_index": 9,
    "rfq_code": "CB-310",
    "confidence": "high",
-   "reason": "\"Plain filler box\" matches CB-310."
+   "reason": "'Plain filler box' matches Plain filler box."
   },
   {
    "item_index": 10,
    "rfq_code": "CB-501",
    "confidence": "high",
-   "reason": "\"Oil shipper 1L pack\" 5-ply matches CB-501."
+   "reason": "'5-ply oil shipper 1L' matches Oil 1L x12 shipper."
   },
   {
    "item_index": 11,
    "rfq_code": "CB-502",
    "confidence": "high",
-   "reason": "\"Oil shipper 5L pack\" 5-ply matches CB-502."
+   "reason": "'5-ply oil shipper 5L' matches Oil 5L x4 shipper."
   },
   {
    "item_index": 12,
    "rfq_code": "CB-503",
    "confidence": "high",
-   "reason": "\"Ghee jar shipper\" matches CB-503."
+   "reason": "'ghee jar shipper' matches Ghee jar shipper, 5-ply."
   },
   {
    "item_index": 13,
    "rfq_code": "CB-504",
    "confidence": "high",
-   "reason": "\"Pickle shipper\" matches CB-504."
+   "reason": "'pickle shipper' matches Pickle jar shipper, 5-ply."
   },
   {
    "item_index": 14,
    "rfq_code": "CB-505",
    "confidence": "high",
-   "reason": "\"Sauce bottle shipper\" matches CB-505."
+   "reason": "'sauce bottle shipper' matches Sauce bottle x24 shipper."
   },
   {
    "item_index": 15,
    "rfq_code": "CB-506",
    "confidence": "high",
-   "reason": "\"Juice tetra shipper\" matches CB-506."
+   "reason": "'juice tetra shipper' matches Juice tetra x24 shipper."
   },
   {
    "item_index": 16,
    "rfq_code": "CB-507",
    "confidence": "high",
-   "reason": "\"Atta 5kg shipper\" matches CB-507."
+   "reason": "'atta 5kg shipper' matches Atta 5kg x4 shipper."
   },
   {
    "item_index": 17,
    "rfq_code": "CB-508",
    "confidence": "high",
-   "reason": "\"Atta 10kg shipper\" matches CB-508."
+   "reason": "'atta 10kg shipper' matches Atta 10kg x2 shipper."
   },
   {
    "item_index": 18,
    "rfq_code": "CB-509",
    "confidence": "high",
-   "reason": "\"Rice master carton\" matches CB-509."
+   "reason": "'rice master carton' matches Rice 25kg master carton."
   },
   {
    "item_index": 19,
    "rfq_code": "CB-510",
    "confidence": "high",
-   "reason": "\"Export master carton\" matches CB-510."
+   "reason": "'export master carton' matches Export master carton."
   },
   {
    "item_index": 20,
    "rfq_code": "CB-511",
    "confidence": "high",
-   "reason": "\"Gift hamper outer, 4-colour print\" matches CB-511."
+   "reason": "'gift hamper outer, 4-colour print' matches Gift hamper outer."
   },
   {
    "item_index": 21,
    "rfq_code": "CB-512",
    "confidence": "high",
-   "reason": "\"Pallet tray\" matches pallet top/bottom tray CB-512."
+   "reason": "'pallet tray' matches Pallet top/bottom tray."
   },
   {
    "item_index": 26,
    "rfq_code": "PT-101",
    "confidence": "high",
-   "reason": "\"Partition for oil shipper\" matches the partition set for CB-501."
+   "reason": "'Partition for the oil shipper' matches partition set for CB-501."
   },
   {
    "item_index": 27,
    "rfq_code": "PT-102",
    "confidence": "high",
-   "reason": "\"Partition for sauce shipper\" matches the partition set for CB-505."
+   "reason": "'Partition for the sauce shipper' matches partition set for CB-505."
   }
  ]
 }

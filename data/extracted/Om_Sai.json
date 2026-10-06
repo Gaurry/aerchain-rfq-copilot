@@ -3,9 +3,9 @@
   "model": "claude-sonnet-5-5",
   "seconds": 9.5,
   "input_tokens": 333,
-  "output_tokens": 1690,
+  "output_tokens": 1644,
   "stop_reason": "tool_use",
-  "extracted_at": "2026-10-06T13:26:29.915634+00:00"
+  "extracted_at": "2026-10-06T14:01:51.437508+00:00"
  },
  "response": {
   "vendor_name": "Om Sai",
@@ -24,14 +24,14 @@
   "items": [
    {
     "vendor_ref": null,
-    "description": "5-ply boxes (one rate for the 5-ply group)",
+    "description": "5-ply (all 5-ply items)",
     "product_type": "unknown",
     "size_as_written": null,
     "size_unit": "unknown",
     "ply": 5,
     "paper_spec": null,
     "print_colours": null,
-    "price_text": "₹42/kg for the 5-ply",
+    "price_text": "₹42/kg",
     "price_value": 42.0,
     "currency": "INR",
     "price_unit": "per_kg",
@@ -46,18 +46,18 @@
      "quote": "₹42/kg for the 5-ply",
      "location": "email body, line 1"
     },
-    "notes": "Rate is per kg; product type not stated by vendor. Whether it includes printing is not stated."
+    "notes": "Rate is per kg; no item sizes or codes given. Unclear whether printing is included."
    },
    {
     "vendor_ref": null,
-    "description": "3-ply boxes (one rate for the 3-ply group)",
+    "description": "3-ply (all 3-ply items)",
     "product_type": "unknown",
     "size_as_written": null,
     "size_unit": "unknown",
     "ply": 3,
     "paper_spec": null,
     "print_colours": null,
-    "price_text": "38 for the 3-ply",
+    "price_text": "38",
     "price_value": 38.0,
     "currency": "INR",
     "price_unit": "per_kg",
@@ -69,14 +69,14 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "₹42/kg for the 5-ply, 38 for the 3-ply",
+     "quote": "38 for the 3-ply",
      "location": "email body, line 1"
     },
-    "notes": "Bare number 38 follows '₹42/kg' in the same sentence; read as INR per kg, but the unit is not repeated."
+    "notes": "Unit not explicitly stated for 38; inferred from the same sentence as '₹42/kg'. Bare number taken as INR."
    },
    {
     "vendor_ref": null,
-    "description": "All remaining items: same as last year",
+    "description": "Rest of items same as last year",
     "product_type": "unknown",
     "size_as_written": null,
     "size_unit": "unknown",
@@ -88,7 +88,7 @@
     "currency": "unknown",
     "price_unit": "same_as_last_year",
     "scope": "all_remaining",
-    "scope_description": "rest",
+    "scope_description": "rest same as last year",
     "is_alternate_spec": false,
     "alternate_note": null,
     "plain_box_rate": false,
@@ -98,7 +98,7 @@
      "quote": "rest same as last year",
      "location": "email body, line 1"
     },
-    "notes": "No price given; refers to a prior agreement."
+    "notes": "No price given; refers to prior-year prices."
    }
   ],
   "questionnaire": [
@@ -196,11 +196,11 @@
    }
   ],
   "extraction_warnings": [
-   "Rates are quoted per kg, not per piece; no box sizes, weights or specifications given, so per-piece cost cannot be derived from the vendor's words.",
-   "'38 for the 3-ply' has no currency or unit written; recorded as INR per kg by continuation of the previous clause.",
-   "'rest same as last year' is ambiguous: it is unclear whether it covers die-cuts, partitions, pads, trays, 7-ply items, and whether the rate is per piece or per kg. No prior price is included in this response.",
-   "GST treatment, validity, payment terms, lead time, printing inclusion and certificates are not stated.",
-   "Questionnaire answered only by reference to last year's submission; no answers recorded in this email. No certificate attached."
+   "The 38 for the 3-ply has no unit stated; it is recorded as per_kg because it follows '₹42/kg' in the same sentence. Please confirm.",
+   "Rates are per kg with no sizes, GSM or item codes, so they cannot be mapped to specific box dimensions. Printing inclusion is not stated.",
+   "'Rest same as last year' is ambiguous. It could cover the die-cuts, partitions, pads and 7-ply items, and no prior prices are included.",
+   "No GST treatment, validity, payment terms, lead time or certificates stated. The questionnaire is answered only as 'same as last yr', so no actual answers are given.",
+   "The quote was sent 30-Sep-2026 at 21:47 IST, on the due date."
   ]
  },
  "ai_matches": []

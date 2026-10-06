@@ -49,6 +49,17 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - **An unmarked price inherits the response's currency, with a review flag.** Gupta's handwritten pad price has no ₹ next to it; the rest of his card is INR.
 - **Every price cell opens its working:** the ledger, the vendor's own words, match confidence and flags.
 
+## The chat panel and the guided flow
+- **One chat panel, two jobs.** Before sending, it's the RFQ co-pilot; once responses are read, the same panel becomes the analyst. The buyer never switches tools.
+- **"Talks an RFx into existence" = conversational chat, typed.** Voice was considered (browser speech-to-text, free) and left out to keep to the brief and avoid a mic failing in the demo room.
+- **The co-pilot edits the draft only through tools** (load last year, change quantity, add or remove a line, set terms, questionnaire). It can't claim a change it didn't make, and every change lands in a visible change log.
+- **It asks instead of inventing.** Asked to add a 2 kg atta shipper without a size, it asked for the size. Given inches, it converted to mm and said so. Asked to make ISO mandatory, it checked the questionnaire first and found it already was.
+- **The analyst never does maths in its head.** It calls tools that reuse the grid's own functions (cheapest per line, award scenario, explain a price) and a calculator for differences. The chat and the grid can't disagree.
+- **Guardrails are designed in:** an item that doesn't exist (CB-100) gets "no such line, did you mean…", not an invented answer. Every answer ends with "How I got this": vendors included or excluded, filters, assumptions.
+- **The flow follows the buyer's real sequence:** draft → send (stubbed) → replies arrive (simulated) → AI reads all five live, in parallel (~45 s) → review, compare, ask, award. A "skip to the finished example" button lets interviewers jump in anywhere.
+- **Fallback, not fakery:** if a live read fails on demo day, the app uses that vendor's earlier live read and labels it as such.
+- **Reproducibility check:** a second, independent live read of all five files scored identically against the answer key.
+
 ## Normalization (deterministic)
 - **One comparable basis:** ₹ per piece, landed at Bawal, before GST.
 - **Every step recorded in a ledger** the buyer can open from any cell (e.g. ₹49.02/kg incl. GST → ÷1.18 → −3% → × 0.566 kg = ₹22.81).

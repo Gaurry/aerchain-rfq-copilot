@@ -1,11 +1,11 @@
 {
  "meta": {
   "model": "claude-sonnet-5-5",
-  "seconds": 34.2,
+  "seconds": 33.4,
   "input_tokens": 2403,
-  "output_tokens": 6926,
+  "output_tokens": 6676,
   "stop_reason": "tool_use",
-  "extracted_at": "2026-10-06T13:29:20.301989+00:00"
+  "extracted_at": "2026-10-06T14:02:15.334799+00:00"
  },
  "response": {
   "vendor_name": "Gupta",
@@ -22,11 +22,11 @@
   "discounts": [],
   "adders": [
    {
-    "description": "Printing",
+    "description": "Printing extra (rates are for PLAIN boxes)",
     "amount": 50.0,
     "unit": "per_100_per_colour",
     "evidence": {
-     "quote": "Printing Rs.50 per 100 per colour extra.",
+     "quote": "Printing Rs.50 per 100 per colour extra",
      "location": "Footnote 1"
     }
    }
@@ -34,7 +34,7 @@
   "items": [
    {
     "vendor_ref": null,
-    "description": "Corrugated box 10 x 8 x 6, 3 ply",
+    "description": "Box 10 x 8 x 6, 3 ply",
     "product_type": "box",
     "size_as_written": "10 x 8 x 6",
     "size_unit": "inch",
@@ -60,7 +60,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 10 x 8 x 6, 5 ply",
+    "description": "Box 10 x 8 x 6, 5 ply",
     "product_type": "box",
     "size_as_written": "10 x 8 x 6",
     "size_unit": "inch",
@@ -86,7 +86,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 12 x 9 x 4, 3 ply",
+    "description": "Box 12 x 9 x 4, 3 ply",
     "product_type": "box",
     "size_as_written": "12 x 9 x 4",
     "size_unit": "inch",
@@ -112,7 +112,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 12 x 9 x 4, 5 ply",
+    "description": "Box 12 x 9 x 4, 5 ply",
     "product_type": "box",
     "size_as_written": "12 x 9 x 4",
     "size_unit": "inch",
@@ -138,7 +138,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 14 x 10 x 7, 3 ply",
+    "description": "Box 14 x 10 x 7, 3 ply (handwritten correction)",
     "product_type": "box",
     "size_as_written": "14 x 10 x 7",
     "size_unit": "inch",
@@ -160,11 +160,11 @@
      "quote": "845 (struck) 895",
      "location": "Rate table row 3, 3 PLY column"
     },
-    "notes": "Printed value 845 is struck through; handwritten 895 written beside it."
+    "notes": "Printed value 845 struck through; handwritten 895 written beside it."
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 14 x 10 x 7, 5 ply",
+    "description": "Box 14 x 10 x 7, 5 ply",
     "product_type": "box",
     "size_as_written": "14 x 10 x 7",
     "size_unit": "inch",
@@ -190,7 +190,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 14 x 10 x 10, 3 ply",
+    "description": "Box 14 x 10 x 10, 3 ply",
     "product_type": "box",
     "size_as_written": "14 x 10 x 10",
     "size_unit": "inch",
@@ -216,7 +216,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 14 x 10 x 10, 5 ply",
+    "description": "Box 14 x 10 x 10, 5 ply",
     "product_type": "box",
     "size_as_written": "14 x 10 x 10",
     "size_unit": "inch",
@@ -242,7 +242,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 15 x 11 x 6, 3 ply",
+    "description": "Box 15 x 11 x 6, 3 ply",
     "product_type": "box",
     "size_as_written": "15 x 11 x 6",
     "size_unit": "inch",
@@ -268,7 +268,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 15 x 11 x 6, 5 ply",
+    "description": "Box 15 x 11 x 6, 5 ply",
     "product_type": "box",
     "size_as_written": "15 x 11 x 6",
     "size_unit": "inch",
@@ -294,7 +294,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 16 x 12 x 8, 3 ply",
+    "description": "Box 16 x 12 x 8, 3 ply",
     "product_type": "box",
     "size_as_written": "16 x 12 x 8",
     "size_unit": "inch",
@@ -320,7 +320,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 16 x 12 x 8, 5 ply",
+    "description": "Box 16 x 12 x 8, 5 ply",
     "product_type": "box",
     "size_as_written": "16 x 12 x 8",
     "size_unit": "inch",
@@ -346,7 +346,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 17 x 13 x 9, 3 ply",
+    "description": "Box 17 x 13 x 9, 3 ply",
     "product_type": "box",
     "size_as_written": "17 x 13 x 9",
     "size_unit": "inch",
@@ -372,7 +372,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 17 x 13 x 9, 5 ply",
+    "description": "Box 17 x 13 x 9, 5 ply",
     "product_type": "box",
     "size_as_written": "17 x 13 x 9",
     "size_unit": "inch",
@@ -398,7 +398,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 18 x 12 x 12, 3 ply",
+    "description": "Box 18 x 12 x 12, 3 ply (handwritten correction)",
     "product_type": "box",
     "size_as_written": "18 x 12 x 12",
     "size_unit": "inch",
@@ -420,11 +420,11 @@
      "quote": "1,475 (struck) 1565",
      "location": "Rate table row 8, 3 PLY column"
     },
-    "notes": "Printed value 1,475 is struck through; handwritten 1565 written beside it."
+    "notes": "Printed value 1,475 struck through; handwritten 1565 written beside it."
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 18 x 12 x 12, 5 ply",
+    "description": "Box 18 x 12 x 12, 5 ply",
     "product_type": "box",
     "size_as_written": "18 x 12 x 12",
     "size_unit": "inch",
@@ -450,7 +450,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 13 x 10 x 12, 3 ply",
+    "description": "Box 13 x 10 x 12, 3 ply",
     "product_type": "box",
     "size_as_written": "13 x 10 x 12",
     "size_unit": "inch",
@@ -472,11 +472,11 @@
      "quote": "13 x 10 x 12 | 1,045",
      "location": "Rate table row 9, 3 PLY column"
     },
-    "notes": "Row appears out of size order in the table (after 18 x 12 x 12)."
+    "notes": null
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 13 x 10 x 12, 5 ply",
+    "description": "Box 13 x 10 x 12, 5 ply (handwritten correction)",
     "product_type": "box",
     "size_as_written": "13 x 10 x 12",
     "size_unit": "inch",
@@ -498,11 +498,11 @@
      "quote": "2,065 (struck) 2190",
      "location": "Rate table row 9, 5 PLY column"
     },
-    "notes": "Printed value 2,065 is struck through; handwritten 2190 written beside it."
+    "notes": "Printed value 2,065 struck through; handwritten 2190 written beside it."
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 18 x 14 x 12, 3 ply",
+    "description": "Box 18 x 14 x 12, 3 ply",
     "product_type": "box",
     "size_as_written": "18 x 14 x 12",
     "size_unit": "inch",
@@ -528,7 +528,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 18 x 14 x 12, 5 ply",
+    "description": "Box 18 x 14 x 12, 5 ply",
     "product_type": "box",
     "size_as_written": "18 x 14 x 12",
     "size_unit": "inch",
@@ -554,7 +554,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 20 x 14 x 13, 3 ply",
+    "description": "Box 20 x 14 x 13, 3 ply",
     "product_type": "box",
     "size_as_written": "20 x 14 x 13",
     "size_unit": "inch",
@@ -580,7 +580,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 20 x 14 x 13, 5 ply",
+    "description": "Box 20 x 14 x 13, 5 ply",
     "product_type": "box",
     "size_as_written": "20 x 14 x 13",
     "size_unit": "inch",
@@ -606,7 +606,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 22 x 16 x 14, 3 ply",
+    "description": "Box 22 x 16 x 14, 3 ply",
     "product_type": "box",
     "size_as_written": "22 x 16 x 14",
     "size_unit": "inch",
@@ -632,7 +632,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 22 x 16 x 14, 5 ply",
+    "description": "Box 22 x 16 x 14, 5 ply",
     "product_type": "box",
     "size_as_written": "22 x 16 x 14",
     "size_unit": "inch",
@@ -658,7 +658,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 24 x 16 x 14, 3 ply",
+    "description": "Box 24 x 16 x 14, 3 ply",
     "product_type": "box",
     "size_as_written": "24 x 16 x 14",
     "size_unit": "inch",
@@ -684,7 +684,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 24 x 16 x 14, 5 ply",
+    "description": "Box 24 x 16 x 14, 5 ply",
     "product_type": "box",
     "size_as_written": "24 x 16 x 14",
     "size_unit": "inch",
@@ -710,7 +710,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 24 x 16 x 16, 3 ply",
+    "description": "Box 24 x 16 x 16, 3 ply",
     "product_type": "box",
     "size_as_written": "24 x 16 x 16",
     "size_unit": "inch",
@@ -736,7 +736,7 @@
    },
    {
     "vendor_ref": null,
-    "description": "Corrugated box 24 x 16 x 16, 5 ply",
+    "description": "Box 24 x 16 x 16, 5 ply",
     "product_type": "box",
     "size_as_written": "24 x 16 x 16",
     "size_unit": "inch",
@@ -782,63 +782,63 @@
     "legibility": "clear",
     "evidence": {
      "quote": "Pad 16x12 - 3ply 185/100 - Sanjay",
-     "location": "Handwritten note at bottom of page"
+     "location": "Handwritten note below footnotes"
     },
-    "notes": "Handwritten note at bottom of sheet, signed Sanjay. Currency not written next to the number."
+    "notes": "Handwritten note at bottom of sheet, signed '- Sanjay'. No currency symbol written."
    }
   ],
   "questionnaire": [
    {
     "question_no": 1,
-    "answer_text": "Not addressed; no ISO certificate attached.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 2,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 3,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 4,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 5,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 6,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 7,
-    "answer_text": "Not addressed; only 'Rates subject to change without notice'.",
+    "answer_text": "Not addressed; only 'Rates subject to change without notice'",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 8,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    },
    {
     "question_no": 9,
-    "answer_text": "Not addressed.",
+    "answer_text": "Not addressed",
     "status": "not_answered",
     "evidence": null
    }
@@ -847,15 +847,15 @@
   "refers_to_prior": [],
   "terms_evidence": [
    {
-    "quote": "All rates for PLAIN boxes. Printing Rs.50 per 100 per colour extra.",
+    "quote": "* All rates for PLAIN boxes. Printing Rs.50 per 100 per colour extra.",
     "location": "Footnote 1"
    },
    {
-    "quote": "GST extra. Ex-factory Faridabad. Min. order 500 pcs per size.",
+    "quote": "* GST extra. Ex-factory Faridabad. Min. order 500 pcs per size.",
     "location": "Footnote 2"
    },
    {
-    "quote": "Rates subject to change without notice.",
+    "quote": "* Rates subject to change without notice.",
     "location": "Footnote 3"
    },
    {
@@ -864,14 +864,12 @@
    }
   ],
   "extraction_warnings": [
-   "Rate list is a photo of a generic rate card in inches, not against our item codes (CB-xxx); no vendor refs given.",
-   "'w.e.f. 01-07-2026' is an effective date, not recorded as quote_date.",
-   "All table rates are stated as for PLAIN boxes; printing is an extra Rs.50 per 100 per colour.",
-   "Row 13 x 10 x 12 is out of size order and its 3-ply rate (1,045) looks low relative to neighbouring rows; recorded as printed.",
-   "Handwritten corrections at 14x10x7 (3 ply), 18x12x12 (3 ply) and 13x10x12 (5 ply): struck printed values noted per item.",
-   "Pad 16x12 note is handwritten at the bottom, partly cut off at the image edge ('- Sanjay'); no currency, size unit or whether it is plain/printed is stated; 'per 100' assumed from '185/100'.",
-   "No paper spec (GSM/BF), payment terms, validity, lead time or GST percentage stated.",
-   "No questionnaire answers and no certificates provided."
+   "Photo of a generic rate list (w.e.f. 01-07-2026), not a response against our item codes; no vendor codes quoted. Quote date not stated, so quote_date left null.",
+   "All box rates are for PLAIN (unprinted) boxes; printing is an adder of Rs.50 per 100 per colour.",
+   "Three 3/5-ply cells have printed values struck through and handwritten replacements: 14x10x7 3-ply (845→895), 18x12x12 3-ply (1,475→1565), 13x10x12 5-ply (2,065→2190).",
+   "Row 13 x 10 x 12 is out of ascending size order in the table (3-ply 1,045 is lower than neighbours); recorded as printed.",
+   "Handwritten pad note '185/100' has no currency symbol and no size unit stated; currency and size unit left unknown. Signed 'Sanjay'; the note's bottom edge is partly cut off in the photo.",
+   "No GSM/BF, payment terms, validity, lead time, or certificates stated. 'Rates subject to change without notice' - no validity period. Minimum order 500 pcs per size."
   ]
  },
  "ai_matches": []

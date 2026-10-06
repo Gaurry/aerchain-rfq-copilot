@@ -61,6 +61,9 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
 
     # --- base price, as quoted --------------------------------------------
     if item.price_unit == PriceUnit.same_as_last_year:
+        if line.ly_price is None:
+            F(Flag("risk", "'Same as last year' but this line has no last-year price"))
+            return out
         v = line.ly_price
         S(Step(f"'{item.price_text}' → FY26 contract price", v, "₹/pc"))
         F(Flag("review", f"Resolved '{item.scope_description or item.price_text}' to last year's contract prices"))
@@ -154,8 +157,10 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
         F(Flag("info" if match.confidence >= 0.9 else "review", match.reason))
 
     # --- sanity vs last year --------------------------------------------------
-    ratio = v / line.ly_price - 1
-    if abs(ratio) > a.price_sanity_band:
+    ratio = v / line.ly_price - 1 if line.ly_price else 0.0
+    if line.ly_price is None:
+        F(Flag("info", "New line: no last-year price to sanity-check against"))
+    elif abs(ratio) > a.price_sanity_band:
         F(Flag("risk", f"{ratio*100:+.0f}% vs last year; check unit or reading"))
 
     out.price = round(v, 4)

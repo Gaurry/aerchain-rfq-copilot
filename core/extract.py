@@ -46,8 +46,8 @@ def _api_key() -> str:
         raise RuntimeError("Set ANTHROPIC_API_KEY (env var or Streamlit secrets)") from e
 
 
-def _context_text() -> str:
-    lines = load_rfq()
+def _context_text(lines=None) -> str:
+    lines = lines or load_rfq()
     rows = [f"{l.code} | {l.description} | {l.box_type} | {l.dims_label} mm | {l.ply}-ply | "
             f"{'plain' if not l.print_colours else str(l.print_colours) + ' colour'} | qty {l.annual_qty:,}"
             for l in lines]
@@ -56,7 +56,7 @@ def _context_text() -> str:
             "\n\n## Questionnaire\n" + "\n".join(qs))
 
 
-def extract_vendor(vendor: str, files: list[Path], model: str = MODEL) -> tuple[VendorResponse, dict]:
+def extract_vendor(vendor: str, files: list[Path], model: str = MODEL, lines=None) -> tuple[VendorResponse, dict]:
     client = anthropic.Anthropic(api_key=_api_key())
     content: list[dict] = []
     for f in files:
@@ -71,7 +71,7 @@ def extract_vendor(vendor: str, files: list[Path], model: str = MODEL) -> tuple[
     msg = client.messages.create(
         model=model, max_tokens=16000,
         system=[{"type": "text", "text": PROMPT.read_text()},
-                {"type": "text", "text": _context_text(), "cache_control": {"type": "ephemeral"}}],
+                {"type": "text", "text": _context_text(lines), "cache_control": {"type": "ephemeral"}}],
         tools=[tool], tool_choice={"type": "auto"},
         messages=[{"role": "user", "content": content}],
     )
@@ -88,9 +88,9 @@ def extract_vendor(vendor: str, files: list[Path], model: str = MODEL) -> tuple[
     return resp, meta
 
 
-def ai_match_leftovers(resp: VendorResponse, model: str = MODEL) -> list[AIMatch]:
+def ai_match_leftovers(resp: VendorResponse, model: str = MODEL, lines=None) -> list[AIMatch]:
     """Items that code/spec matching could not place go to the AI matcher."""
-    lines = load_rfq()
+    lines = lines or load_rfq()
     matches, unmatched = match_vendor(resp, lines)
     taken = {m.rfq_code for m in matches}
     leftovers = [i for i in unmatched if resp.items[i].scope == "single_item" and not resp.items[i].is_alternate_spec
@@ -143,3 +143,9 @@ def rematch_only(vendor: str):
     d = json.loads(p.read_text())
     resp = VendorResponse.model_validate(d["response"])
     return save(vendor, resp, d["meta"], ai_match_leftovers(resp))
+
+
+def read_and_match(vendor: str, files: list[Path], lines=None, model: str = MODEL) -> Path:
+    """The full live pipeline for one vendor: extract, AI-match leftovers, save."""
+    resp, meta = extract_vendor(vendor, files, model=model, lines=lines)
+    return save(vendor, resp, meta, ai_match_leftovers(resp, model=model, lines=lines))

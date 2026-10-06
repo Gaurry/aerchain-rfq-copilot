@@ -1,11 +1,11 @@
 {
  "meta": {
   "model": "claude-sonnet-5-5",
-  "seconds": 37.6,
+  "seconds": 40.5,
   "input_tokens": 9228,
-  "output_tokens": 7742,
+  "output_tokens": 8666,
   "stop_reason": "tool_use",
-  "extracted_at": "2026-10-06T13:28:05.389134+00:00"
+  "extracted_at": "2026-10-06T14:02:22.432518+00:00"
  },
  "response": {
   "vendor_name": "Shree Balaji",
@@ -54,7 +54,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-301 ... 3 15.95* Per Pc",
+     "quote": "CB-301 Biscuit 200g shipper – 1-colour flexo 400x300x200 3 15.95* Per Pc",
      "location": "Page 1, Sr 1"
     },
     "notes": null
@@ -80,7 +80,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-302 ... 3 11.83* Per Pc",
+     "quote": "CB-302 Biscuit 100g shipper – 1-colour flexo 360x250x180 3 11.83* Per Pc",
      "location": "Page 1, Sr 2"
     },
     "notes": null
@@ -106,7 +106,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-303 ... 3 17.86* Per Pc",
+     "quote": "CB-303 Rusk 300g shipper – 1-colour flexo 420x320x220 3 17.86* Per Pc",
      "location": "Page 1, Sr 3"
     },
     "notes": null
@@ -132,7 +132,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-304 ... 3 20.04* Per Pc",
+     "quote": "CB-304 Namkeen 150g shipper – 1-colour flexo 450x300x300 3 20.04* Per Pc",
      "location": "Page 1, Sr 4"
     },
     "notes": null
@@ -158,7 +158,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-305 ... 3 25.31* Per Pc",
+     "quote": "CB-305 Namkeen 400g shipper – 2-colour flexo 500x350x320 3 25.31* Per Pc",
      "location": "Page 1, Sr 5"
     },
     "notes": null
@@ -184,7 +184,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-306 ... 3 30.93* Per Pc",
+     "quote": "CB-306 Chips family pack shipper – 1-colour flexo 550x400x350 3 30.93* Per Pc",
      "location": "Page 1, Sr 6"
     },
     "notes": null
@@ -210,7 +210,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-307 ... 3 7.99* Per Pc",
+     "quote": "CB-307 Sample/promo box – 2-colour flexo 250x200x150 3 7.99* Per Pc",
      "location": "Page 1, Sr 7"
     },
     "notes": null
@@ -236,7 +236,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-308 ... 3 8.36* Per Pc",
+     "quote": "CB-308 E-com mailer small – 2-colour flexo 300x220x100 3 8.36* Per Pc",
      "location": "Page 1, Sr 8"
     },
     "notes": null
@@ -262,7 +262,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-309 ... 3 13.03* Per Pc",
+     "quote": "CB-309 E-com mailer medium – 2-colour flexo 380x280x140 3 13.03* Per Pc",
      "location": "Page 1, Sr 9"
     },
     "notes": null
@@ -314,10 +314,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-501 ... 5 49.02* Per Kg",
+     "quote": "CB-501 Oil 1L x12 shipper – 1-colour flexo 330x250x290 5 49.02* Per Kg",
      "location": "Page 1, Sr 11"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-502",
@@ -340,10 +340,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-502 ... 5 48.32* Per Kg",
+     "quote": "CB-502 Oil 5L x4 shipper – 1-colour flexo 380x340x320 5 48.32* Per Kg",
      "location": "Page 1, Sr 12"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-503",
@@ -366,10 +366,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-503 ... 5 50.63* Per Kg",
+     "quote": "CB-503 Ghee 1L jar x12 shipper – 2-colour flexo 360x270x200 5 50.63* Per Kg",
      "location": "Page 1, Sr 13"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-504",
@@ -392,10 +392,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-504 ... 5 49.04* Per Kg",
+     "quote": "CB-504 Pickle jar x24 shipper – 1-colour flexo 400x300x180 5 49.04* Per Kg",
      "location": "Page 1, Sr 14"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-505",
@@ -418,10 +418,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-505 ... 5 48.52* Per Kg",
+     "quote": "CB-505 Sauce bottle x24 shipper – 1-colour flexo 420x280x230 5 48.52* Per Kg",
      "location": "Page 1, Sr 15"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-506",
@@ -444,10 +444,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-506 ... 5 49.94* Per Kg",
+     "quote": "CB-506 Juice tetra x24 shipper – 1-colour flexo 400x260x210 5 49.94* Per Kg",
      "location": "Page 1, Sr 16"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-507",
@@ -470,10 +470,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-507 ... 5 49.18* Per Kg",
+     "quote": "CB-507 Atta 5kg x4 shipper – 1-colour flexo 460x360x300 5 49.18* Per Kg",
      "location": "Page 1, Sr 17"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-508",
@@ -496,10 +496,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-508 ... 5 47.99* Per Kg",
+     "quote": "CB-508 Atta 10kg x2 shipper – 1-colour flexo 500x380x320 5 47.99* Per Kg",
      "location": "Page 1, Sr 18"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-509",
@@ -522,10 +522,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-509 ... 5 48.64* Per Kg",
+     "quote": "CB-509 Rice 25kg master carton – 1-colour flexo 600x400x350 5 48.64* Per Kg",
      "location": "Page 1, Sr 19"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-510",
@@ -548,10 +548,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-510 ... 5 48.94* Per Kg",
+     "quote": "CB-510 Export master carton – 2-colour flexo 600x400x400 5 48.94* Per Kg",
      "location": "Page 1, Sr 20"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-511",
@@ -574,10 +574,10 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-511 ... 5 52.91* Per Kg",
+     "quote": "CB-511 Gift hamper outer – 4-colour flexo 450x350x150 5 52.91* Per Kg",
      "location": "Page 1, Sr 21"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-512",
@@ -603,7 +603,7 @@
      "quote": "CB-512 Pallet top/bottom tray 1200x1000x100 5 48.47* Per Kg",
      "location": "Page 1, Sr 22"
     },
-    "notes": null
+    "notes": "Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval."
    },
    {
     "vendor_ref": "CB-701",
@@ -652,7 +652,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "CB-702 ... 7 184.94* Per Pc",
+     "quote": "CB-702 Heavy-duty export carton – 1-colour flexo 700x500x500 7 184.94* Per Pc",
      "location": "Page 1, Sr 24"
     },
     "notes": null
@@ -678,7 +678,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "DC-101 ... 3 10.08* Per Pc",
+     "quote": "DC-101 Die-cut display tray (counter) – 4-colour flexo 350x250x80 3 10.08* Per Pc",
      "location": "Page 1, Sr 25"
     },
     "notes": null
@@ -704,7 +704,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "DC-102 ... 3 6.64* Per Pc",
+     "quote": "DC-102 Die-cut sleeve – 2-colour flexo 300x200x60 3 6.64* Per Pc",
      "location": "Page 1, Sr 26"
     },
     "notes": null
@@ -730,7 +730,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "PT-101 ... 3 4.42* Per Pc",
+     "quote": "PT-101 Partition set 12-cell (for CB-501) 330x250x280 3 4.42* Per Pc",
      "location": "Page 1, Sr 27"
     },
     "notes": null
@@ -756,7 +756,7 @@
     "handwritten": false,
     "legibility": "clear",
     "evidence": {
-     "quote": "PT-102 ... 3 6.02* Per Pc",
+     "quote": "PT-102 Partition set 24-cell (for CB-505) 420x280x220 3 6.02* Per Pc",
      "location": "Page 1, Sr 28"
     },
     "notes": null
@@ -913,7 +913,7 @@
   "terms_evidence": [
    {
     "quote": "Terms: Delivery: FOR your Bawal plant. Payment: 60 days. Delivery period: 10 days from PO. Validity: 60 days.",
-    "location": "Page 2, terms paragraph"
+    "location": "Page 2"
    },
    {
     "quote": "* Rates are inclusive of GST @ 18%. Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval.",
@@ -925,13 +925,12 @@
    }
   ],
   "extraction_warnings": [
-   "All rates carry '*' meaning inclusive of GST @ 18% per footnote.",
-   "Items CB-501 to CB-512 (5-ply) are priced Per Kg on finished box weight; actual weight per box is 'to be confirmed on sample approval', so per-box cost is not determinable from the quote. CB-701/702 and all others are Per Pc.",
-   "Validity stated as 60 days, while footnote says prices fixed for 6 months from date of PO, thereafter subject to kraft paper price.",
-   "CB-310 'Plain filler box', CB-512, CB-701 and PT/PD lines give no print colour count; not recorded. Vendor does not state whether any rate excludes printing.",
-   "No GSM/BF paper spec stated anywhere in the quotation.",
-   "ISO certificate valid-until date (15 September 2026) is as printed; quote is dated 28.09.2026. Recorded only, not judged. Certificate footer says issuer is 'fictional body for demo dataset'.",
-   "Quote header size column is '(mm)'; sizes recorded in mm."
+   "Per Kg rates (CB-501 to CB-512) are on finished box weight; vendor says actual weight per box is to be confirmed on sample approval, so per-box weight is not stated.",
+   "All rates carry '*' which the footnote defines as inclusive of GST @ 18%.",
+   "No paper GSM/BF stated for any item; paper_spec left null.",
+   "Quotation validity is 60 days, but footnote says prices fixed for 6 months from date of PO, thereafter subject to kraft paper price.",
+   "CB-310 'Plain filler box' has no colour count stated; print_colours left null. Vendor does not explicitly state rates exclude printing.",
+   "ISO certificate states Valid Until 15 September 2026 (recorded as printed); quote is dated 28.09.2026."
   ]
  },
  "ai_matches": []
