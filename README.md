@@ -9,3 +9,18 @@ Built for the Aerchain product take-home.
 **Core principle:** AI reads and interprets. Code calculates. Humans decide.
 
 _Work in progress._
+
+## Layout
+
+```
+app.py              Streamlit UI
+core/rfq.py         30-line RFQ, last-year prices, questionnaire, assumptions
+core/schema.py      What the AI must return (literal values + evidence)
+core/matching.py    Vendor item → RFQ line (code, spec, category rules)
+core/normalize.py   Deterministic ₹/pc landed ex-GST, with a step ledger
+data/inbox/         Vendor responses as received (email is stubbed)
+evals/answer_key.xlsx  Ground truth for scoring extraction
+tests/              Golden fixtures (tests only) + normalization checks
+```
+
+Run tests: `python -m tests.test_normalize`

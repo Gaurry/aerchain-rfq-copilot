@@ -1,0 +1,103 @@
+{
+ "vendor_name": "Om Sai",
+ "source_files": [
+  "5_OmSai_reply.eml"
+ ],
+ "quote_date": null,
+ "gst_treatment": "not_stated",
+ "gst_rate_percent": null,
+ "freight_treatment": "extra",
+ "payment_days": null,
+ "validity_days": null,
+ "lead_time_text": null,
+ "discounts": [],
+ "adders": [],
+ "items": [
+  {
+   "vendor_ref": null,
+   "description": "5-ply",
+   "product_type": "unknown",
+   "size_as_written": null,
+   "size_unit": "unknown",
+   "ply": 5,
+   "paper_spec": null,
+   "print_colours": null,
+   "price_text": "₹42/kg",
+   "price_value": 42.0,
+   "currency": "INR",
+   "price_unit": "per_kg",
+   "scope": "category",
+   "scope_description": "the 5-ply",
+   "is_alternate_spec": false,
+   "alternate_note": null,
+   "plain_box_rate": false,
+   "handwritten": false,
+   "legibility": "clear",
+   "evidence": {
+    "quote": "₹42/kg for the 5-ply",
+    "location": null
+   },
+   "notes": null
+  },
+  {
+   "vendor_ref": null,
+   "description": "3-ply",
+   "product_type": "unknown",
+   "size_as_written": null,
+   "size_unit": "unknown",
+   "ply": 3,
+   "paper_spec": null,
+   "print_colours": null,
+   "price_text": "38",
+   "price_value": 38.0,
+   "currency": "INR",
+   "price_unit": "per_kg",
+   "scope": "category",
+   "scope_description": "the 3-ply",
+   "is_alternate_spec": false,
+   "alternate_note": null,
+   "plain_box_rate": false,
+   "handwritten": false,
+   "legibility": "clear",
+   "evidence": {
+    "quote": "38 for the 3-ply",
+    "location": null
+   },
+   "notes": null
+  },
+  {
+   "vendor_ref": null,
+   "description": "rest",
+   "product_type": "unknown",
+   "size_as_written": null,
+   "size_unit": "unknown",
+   "ply": null,
+   "paper_spec": null,
+   "print_colours": null,
+   "price_text": "rest same as last year",
+   "price_value": null,
+   "currency": "INR",
+   "price_unit": "same_as_last_year",
+   "scope": "all_remaining",
+   "scope_description": "rest same as last year",
+   "is_alternate_spec": false,
+   "alternate_note": null,
+   "plain_box_rate": false,
+   "handwritten": false,
+   "legibility": "clear",
+   "evidence": {
+    "quote": "rest same as last year",
+    "location": null
+   },
+   "notes": null
+  }
+ ],
+ "questionnaire": [],
+ "certificates": [],
+ "refers_to_prior": [
+  "rest same as last year",
+  "questionnaire same as last yr"
+ ],
+ "terms_evidence": [],
+ "extraction_warnings": []
+}
