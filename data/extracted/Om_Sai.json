@@ -1,0 +1,207 @@
+{
+ "meta": {
+  "model": "claude-sonnet-5-5",
+  "seconds": 9.5,
+  "input_tokens": 333,
+  "output_tokens": 1690,
+  "stop_reason": "tool_use",
+  "extracted_at": "2026-10-06T13:26:29.915634+00:00"
+ },
+ "response": {
+  "vendor_name": "Om Sai",
+  "source_files": [
+   "5_OmSai_reply.eml"
+  ],
+  "quote_date": "2026-09-30",
+  "gst_treatment": "not_stated",
+  "gst_rate_percent": null,
+  "freight_treatment": "extra",
+  "payment_days": null,
+  "validity_days": null,
+  "lead_time_text": null,
+  "discounts": [],
+  "adders": [],
+  "items": [
+   {
+    "vendor_ref": null,
+    "description": "5-ply boxes (one rate for the 5-ply group)",
+    "product_type": "unknown",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "₹42/kg for the 5-ply",
+    "price_value": 42.0,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "category",
+    "scope_description": "the 5-ply",
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "₹42/kg for the 5-ply",
+     "location": "email body, line 1"
+    },
+    "notes": "Rate is per kg; product type not stated by vendor. Whether it includes printing is not stated."
+   },
+   {
+    "vendor_ref": null,
+    "description": "3-ply boxes (one rate for the 3-ply group)",
+    "product_type": "unknown",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "38 for the 3-ply",
+    "price_value": 38.0,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "category",
+    "scope_description": "the 3-ply",
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "₹42/kg for the 5-ply, 38 for the 3-ply",
+     "location": "email body, line 1"
+    },
+    "notes": "Bare number 38 follows '₹42/kg' in the same sentence; read as INR per kg, but the unit is not repeated."
+   },
+   {
+    "vendor_ref": null,
+    "description": "All remaining items: same as last year",
+    "product_type": "unknown",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "rest same as last year",
+    "price_value": null,
+    "currency": "unknown",
+    "price_unit": "same_as_last_year",
+    "scope": "all_remaining",
+    "scope_description": "rest",
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "rest same as last year",
+     "location": "email body, line 1"
+    },
+    "notes": "No price given; refers to a prior agreement."
+   }
+  ],
+  "questionnaire": [
+   {
+    "question_no": 1,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 2,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 3,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 4,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 5,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 6,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 7,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 8,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   },
+   {
+    "question_no": 9,
+    "answer_text": "questionnaire same as last yr.",
+    "status": "refers_elsewhere",
+    "evidence": {
+     "quote": "questionnaire same as last yr.",
+     "location": "email body"
+    }
+   }
+  ],
+  "certificates": [],
+  "refers_to_prior": [
+   "rest same as last year",
+   "questionnaire same as last yr"
+  ],
+  "terms_evidence": [
+   {
+    "quote": "freight extra",
+    "location": "email body, line 1"
+   }
+  ],
+  "extraction_warnings": [
+   "Rates are quoted per kg, not per piece; no box sizes, weights or specifications given, so per-piece cost cannot be derived from the vendor's words.",
+   "'38 for the 3-ply' has no currency or unit written; recorded as INR per kg by continuation of the previous clause.",
+   "'rest same as last year' is ambiguous: it is unclear whether it covers die-cuts, partitions, pads, trays, 7-ply items, and whether the rate is per piece or per kg. No prior price is included in this response.",
+   "GST treatment, validity, payment terms, lead time, printing inclusion and certificates are not stated.",
+   "Questionnaire answered only by reference to last year's submission; no answers recorded in this email. No certificate attached."
+  ]
+ },
+ "ai_matches": []
+}

@@ -1,0 +1,1040 @@
+{
+ "meta": {
+  "model": "claude-sonnet-5-5",
+  "seconds": 36.8,
+  "input_tokens": 1422,
+  "output_tokens": 6888,
+  "stop_reason": "tool_use",
+  "extracted_at": "2026-10-06T13:28:44.328733+00:00"
+ },
+ "response": {
+  "vendor_name": "Pacific",
+  "source_files": [
+   "3_Pacific_Proposal.docx"
+  ],
+  "quote_date": "2026-09-29",
+  "gst_treatment": "exclusive",
+  "gst_rate_percent": null,
+  "freight_treatment": "delivered",
+  "payment_days": 30,
+  "validity_days": 15,
+  "lead_time_text": "14 to 21 days from receipt of PO, depending on our production schedule",
+  "discounts": [],
+  "adders": [],
+  "items": [
+   {
+    "vendor_ref": "CB-301",
+    "description": "3-ply biscuit shipper (CB-301)",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.171",
+    "price_value": 0.171,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-301, CB-302 and CB-303), we are pleased to offer USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-302",
+    "description": "3-ply biscuit shipper (CB-302)",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.132",
+    "price_value": 0.132,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-303",
+    "description": "3-ply rusk shipper (CB-303)",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.193",
+    "price_value": 0.193,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.171, USD 0.132 and USD 0.193 respectively",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Namkeen 150g shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.219",
+    "price_value": 0.219,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the 150g shipper, the 400g shipper and the chips family pack – would be USD 0.219, USD 0.273 and USD 0.337",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Namkeen 400g shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.273",
+    "price_value": 0.273,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.219, USD 0.273 and USD 0.337",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Chips family pack shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.337",
+    "price_value": 0.337,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.219, USD 0.273 and USD 0.337",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Promo box",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.089",
+    "price_value": 0.089,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The promo box comes to USD 0.089",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "E-commerce mailer, small",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.093",
+    "price_value": 0.093,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the small and medium e-commerce mailers are USD 0.093 and USD 0.143",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "E-commerce mailer, medium",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.143",
+    "price_value": 0.143,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.093 and USD 0.143",
+     "location": "¶13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Plain filler box",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.142",
+    "price_value": 0.142,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The plain filler box would be USD 0.142",
+     "location": "¶13"
+    },
+    "notes": "'Plain' is part of the item name; vendor does not explicitly say rates exclude printing."
+   },
+   {
+    "vendor_ref": null,
+    "description": "Oil shipper 1L pack",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.283",
+    "price_value": 0.283,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the oil shippers for 1L and 5L packs are priced at USD 0.283 and USD 0.413",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Oil shipper 5L pack",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.413",
+    "price_value": 0.413,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.283 and USD 0.413",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Ghee jar shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.271",
+    "price_value": 0.271,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The ghee jar shipper is USD 0.271",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Pickle shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.290",
+    "price_value": 0.29,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the pickle shipper USD 0.290",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Sauce bottle shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.317",
+    "price_value": 0.317,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the sauce bottle shipper USD 0.317",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Juice tetra shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.276",
+    "price_value": 0.276,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the juice tetra shipper USD 0.276",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Atta 5kg shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.480",
+    "price_value": 0.48,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the 5kg and 10kg shippers come to USD 0.480 and USD 0.540",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Atta 10kg shipper",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.540",
+    "price_value": 0.54,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.480 and USD 0.540",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Rice master carton",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.636",
+    "price_value": 0.636,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The rice master carton is USD 0.636",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Export master carton",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.687",
+    "price_value": 0.687,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the export master carton USD 0.687",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Gift hamper outer, 4-colour print",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 4,
+    "price_text": "USD 0.374",
+    "price_value": 0.374,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The gift hamper outer, with 4-colour print, is USD 0.374",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Pallet tray",
+    "product_type": "tray",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.674",
+    "price_value": 0.674,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the pallet tray USD 0.674",
+     "location": "¶14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-701",
+    "description": "7-ply heavy-duty bulk carton (CB-701)",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 7,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 2.064",
+    "price_value": 2.064,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "Our 7-ply heavy-duty bulk carton (CB-701) is offered at USD 2.064",
+     "location": "¶15"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-702",
+    "description": "Heavy-duty export carton (CB-702)",
+    "product_type": "box",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": 7,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 1.464",
+    "price_value": 1.464,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the heavy-duty export carton (CB-702) at USD 1.464",
+     "location": "¶15"
+    },
+    "notes": "7-ply is stated for the bulk carton CB-701; the CB-702 sentence is part of the same '7-ply' heavy-duty highlight but ply is not stated explicitly for CB-702."
+   },
+   {
+    "vendor_ref": "DC-101",
+    "description": "Counter display tray (DC-101)",
+    "product_type": "die_cut",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.087",
+    "price_value": 0.087,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "The counter display tray (DC-101) is USD 0.087",
+     "location": "¶15"
+    },
+    "notes": "Vendor calls it a 'counter display tray'; product type set to die_cut based on DC code."
+   },
+   {
+    "vendor_ref": "DC-102",
+    "description": "Die-cut sleeve (DC-102)",
+    "product_type": "die_cut",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.056",
+    "price_value": 0.056,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "the die-cut sleeve (DC-102) is USD 0.056",
+     "location": "¶15"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Partition for oil shipper",
+    "product_type": "partition",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.046",
+    "price_value": 0.046,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "Partitions for the oil shipper and the sauce shipper are USD 0.046 and USD 0.063 per set",
+     "location": "¶16"
+    },
+    "notes": "Vendor unit is 'per set'; recorded as per_piece since no other unit fits. Oil pack size (1L/5L) not specified."
+   },
+   {
+    "vendor_ref": null,
+    "description": "Partition for sauce shipper",
+    "product_type": "partition",
+    "size_as_written": null,
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.063",
+    "price_value": 0.063,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.046 and USD 0.063 per set",
+     "location": "¶16"
+    },
+    "notes": "Vendor unit is 'per set'."
+   },
+   {
+    "vendor_ref": null,
+    "description": "Layer pad 400x300",
+    "product_type": "pad",
+    "size_as_written": "400x300",
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.026",
+    "price_value": 0.026,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.026 for the 400x300 size and USD 0.101 for the 600x400 size",
+     "location": "¶16"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": null,
+    "description": "Layer pad 600x400",
+    "product_type": "pad",
+    "size_as_written": "600x400",
+    "size_unit": "unknown",
+    "ply": null,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "USD 0.101",
+    "price_value": 0.101,
+    "currency": "USD",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "USD 0.101 for the 600x400 size",
+     "location": "¶16"
+    },
+    "notes": null
+   }
+  ],
+  "questionnaire": [
+   {
+    "question_no": 1,
+    "answer_text": "the relevant group-level quality certifications are in place. (No ISO 9001:2015 certificate named or attached.)",
+    "status": "vague",
+    "evidence": {
+     "quote": "the relevant group-level quality certifications are in place",
+     "location": "¶18"
+    }
+   },
+   {
+    "question_no": 2,
+    "answer_text": "Test reports are available as per standard industry practice.",
+    "status": "vague",
+    "evidence": {
+     "quote": "Test reports are available as per standard industry practice",
+     "location": "¶18"
+    }
+   },
+   {
+    "question_no": 3,
+    "answer_text": "We have ample capacity to support your requirement (no MT figure).",
+    "status": "vague",
+    "evidence": {
+     "quote": "We have ample capacity to support your requirement",
+     "location": "¶18"
+    }
+   },
+   {
+    "question_no": 4,
+    "answer_text": "Delivery lead time would be 14 to 21 days from receipt of PO, depending on our production schedule.",
+    "status": "no",
+    "evidence": {
+     "quote": "Delivery lead time would be 14 to 21 days from receipt of PO",
+     "location": "¶17"
+    }
+   },
+   {
+    "question_no": 5,
+    "answer_text": "all our inks are compliant with applicable norms (no food-safe / low-migration claim stated).",
+    "status": "vague",
+    "evidence": {
+     "quote": "all our inks are compliant with applicable norms",
+     "location": "¶18"
+    }
+   },
+   {
+    "question_no": 6,
+    "answer_text": "Payment terms are 30 days from invoice.",
+    "status": "no",
+    "evidence": {
+     "quote": "Payment terms are 30 days from invoice",
+     "location": "¶17"
+    }
+   },
+   {
+    "question_no": 7,
+    "answer_text": "This offer is valid for 15 days",
+    "status": "no",
+    "evidence": {
+     "quote": "This offer is valid for 15 days",
+     "location": "¶17"
+    }
+   },
+   {
+    "question_no": 8,
+    "answer_text": "prices are subject to revision in line with market conditions (no defined mechanism).",
+    "status": "vague",
+    "evidence": {
+     "quote": "prices are subject to revision in line with market conditions",
+     "location": "¶17"
+    }
+   },
+   {
+    "question_no": 9,
+    "answer_text": "We take great pride in our quality record. (No rejection rate given.)",
+    "status": "vague",
+    "evidence": {
+     "quote": "We take great pride in our quality record",
+     "location": "¶18"
+    }
+   }
+  ],
+  "certificates": [],
+  "refers_to_prior": [],
+  "terms_evidence": [
+   {
+    "quote": "all prices below are quoted in US Dollars per piece, delivered to your Bawal plant. Invoicing will be in INR at the RBI reference rate prevailing on the date of invoice. GST will be charged extra as applicable.",
+    "location": "¶12"
+   },
+   {
+    "quote": "Payment terms are 30 days from invoice. This offer is valid for 15 days, given the current volatility in global kraft paper markets, and prices are subject to revision in line with market conditions.",
+    "location": "¶17"
+   }
+  ],
+  "extraction_warnings": [
+   "All prices are in USD per piece; vendor will invoice in INR at the RBI reference rate on invoice date, so the INR amount is not fixed.",
+   "Most items are identified by description only; the vendor gave codes only for CB-301/302/303, CB-701/702, DC-101/102. No codes were assigned to other items by me.",
+   "Ply stated explicitly only for CB-301–303 (3-ply), the '5-ply range' paragraph, and CB-701 (7-ply). Ply for CB-702 and the namkeen/promo/mailer/filler items is not stated.",
+   "No paper GSM/BF, box sizes or print colours given (except 4-colour for gift hamper outer).",
+   "Partition prices are stated 'per set'; recorded as per_piece.",
+   "Validity of 15 days with 'prices subject to revision in line with market conditions' – price firmness is unclear.",
+   "No certificate attached; only 'group-level quality certifications' mentioned without standard, number or date.",
+   "Vendor is a subsidiary of a Singapore group; certifications are described at group level, not for this entity."
+  ]
+ },
+ "ai_matches": [
+  {
+   "item_index": 3,
+   "rfq_code": "CB-304",
+   "confidence": "high",
+   "reason": "\"Namkeen 150g shipper\" matches CB-304 by name and sequence."
+  },
+  {
+   "item_index": 4,
+   "rfq_code": "CB-305",
+   "confidence": "high",
+   "reason": "\"Namkeen 400g shipper\" matches CB-305."
+  },
+  {
+   "item_index": 5,
+   "rfq_code": "CB-306",
+   "confidence": "high",
+   "reason": "\"Chips family pack shipper\" matches CB-306."
+  },
+  {
+   "item_index": 6,
+   "rfq_code": "CB-307",
+   "confidence": "high",
+   "reason": "\"Promo box\" matches Sample/promo box CB-307."
+  },
+  {
+   "item_index": 7,
+   "rfq_code": "CB-308",
+   "confidence": "high",
+   "reason": "\"E-commerce mailer, small\" matches CB-308."
+  },
+  {
+   "item_index": 8,
+   "rfq_code": "CB-309",
+   "confidence": "high",
+   "reason": "\"E-commerce mailer, medium\" matches CB-309."
+  },
+  {
+   "item_index": 9,
+   "rfq_code": "CB-310",
+   "confidence": "high",
+   "reason": "\"Plain filler box\" matches CB-310."
+  },
+  {
+   "item_index": 10,
+   "rfq_code": "CB-501",
+   "confidence": "high",
+   "reason": "\"Oil shipper 1L pack\" 5-ply matches CB-501."
+  },
+  {
+   "item_index": 11,
+   "rfq_code": "CB-502",
+   "confidence": "high",
+   "reason": "\"Oil shipper 5L pack\" 5-ply matches CB-502."
+  },
+  {
+   "item_index": 12,
+   "rfq_code": "CB-503",
+   "confidence": "high",
+   "reason": "\"Ghee jar shipper\" matches CB-503."
+  },
+  {
+   "item_index": 13,
+   "rfq_code": "CB-504",
+   "confidence": "high",
+   "reason": "\"Pickle shipper\" matches CB-504."
+  },
+  {
+   "item_index": 14,
+   "rfq_code": "CB-505",
+   "confidence": "high",
+   "reason": "\"Sauce bottle shipper\" matches CB-505."
+  },
+  {
+   "item_index": 15,
+   "rfq_code": "CB-506",
+   "confidence": "high",
+   "reason": "\"Juice tetra shipper\" matches CB-506."
+  },
+  {
+   "item_index": 16,
+   "rfq_code": "CB-507",
+   "confidence": "high",
+   "reason": "\"Atta 5kg shipper\" matches CB-507."
+  },
+  {
+   "item_index": 17,
+   "rfq_code": "CB-508",
+   "confidence": "high",
+   "reason": "\"Atta 10kg shipper\" matches CB-508."
+  },
+  {
+   "item_index": 18,
+   "rfq_code": "CB-509",
+   "confidence": "high",
+   "reason": "\"Rice master carton\" matches CB-509."
+  },
+  {
+   "item_index": 19,
+   "rfq_code": "CB-510",
+   "confidence": "high",
+   "reason": "\"Export master carton\" matches CB-510."
+  },
+  {
+   "item_index": 20,
+   "rfq_code": "CB-511",
+   "confidence": "high",
+   "reason": "\"Gift hamper outer, 4-colour print\" matches CB-511."
+  },
+  {
+   "item_index": 21,
+   "rfq_code": "CB-512",
+   "confidence": "high",
+   "reason": "\"Pallet tray\" matches pallet top/bottom tray CB-512."
+  },
+  {
+   "item_index": 26,
+   "rfq_code": "PT-101",
+   "confidence": "high",
+   "reason": "\"Partition for oil shipper\" matches the partition set for CB-501."
+  },
+  {
+   "item_index": 27,
+   "rfq_code": "PT-102",
+   "confidence": "high",
+   "reason": "\"Partition for sauce shipper\" matches the partition set for CB-505."
+  }
+ ]
+}

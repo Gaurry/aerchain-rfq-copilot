@@ -103,7 +103,18 @@ class VendorResponse(BaseModel):
 class Match(BaseModel):
     rfq_code: str
     item_index: int
-    method: Literal["code", "spec", "category_rule", "remaining_rule"]
+    method: Literal["code", "spec", "description", "category_rule", "remaining_rule"]
     size_deviation: Optional[float] = None
     confidence: float
     reason: str
+
+
+class AIMatch(BaseModel):
+    item_index: int
+    rfq_code: Optional[str] = None
+    confidence: Literal["high", "medium", "low"]
+    reason: str
+
+
+class AIMatchResult(BaseModel):
+    matches: list[AIMatch]

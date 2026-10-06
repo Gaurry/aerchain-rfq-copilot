@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 
 from .rfq import RFQLine
-from .schema import Match, QuotedItem, VendorResponse
+from .schema import AIMatch, Match, QuotedItem, VendorResponse
 
 BOX_TYPES = {"RSC", "Tray"}
 MAX_SIZE_DEVIATION = 0.10   # beyond 10% on any dimension it is a different box
@@ -59,7 +59,8 @@ def _confidence_from_dev(dev: float) -> float:
     return 0.55
 
 
-def match_vendor(resp: VendorResponse, lines: list[RFQLine]) -> tuple[list[Match], list[int]]:
+def match_vendor(resp: VendorResponse, lines: list[RFQLine],
+                 ai_matches: list[AIMatch] | None = None) -> tuple[list[Match], list[int]]:
     """Returns (matches, unmatched_item_indexes). One primary item per RFQ line;
     alternates are matched too but kept separate by is_alternate_spec."""
     by_code = {ln.code: ln for ln in lines}
@@ -93,6 +94,22 @@ def match_vendor(resp: VendorResponse, lines: list[RFQLine]) -> tuple[list[Match
                              reason=f"{it.ply}-ply {it.size_as_written} ({it.size_unit}) ≈ {ln.dims_label} mm, "
                                     f"max deviation {dev*100:.1f}%"))
         taken.add(ln.code); used_items.add(i)
+
+    # 2b. AI description matches, checked by rules (ply, product type, one-to-one)
+    conf_map = {"high": 0.9, "medium": 0.75, "low": 0.5}
+    for am in ai_matches or []:
+        if am.rfq_code is None or am.rfq_code not in by_code or am.item_index >= len(resp.items):
+            continue
+        it, ln = resp.items[am.item_index], by_code[am.rfq_code]
+        if am.item_index in used_items or ln.code in taken or it.scope != "single_item" or it.is_alternate_spec:
+            continue
+        if it.ply and it.ply != ln.ply:
+            continue
+        if it.product_type != "unknown" and it.product_type not in COMPATIBLE.get(ln.box_type, set()):
+            continue
+        matches.append(Match(rfq_code=ln.code, item_index=am.item_index, method="description",
+                             confidence=conf_map[am.confidence], reason=f"Matched by description: {am.reason}"))
+        taken.add(ln.code); used_items.add(am.item_index)
 
     # 3. alternates: attach to the line their spec matches (not counted as primary)
     for i, it in enumerate(resp.items):

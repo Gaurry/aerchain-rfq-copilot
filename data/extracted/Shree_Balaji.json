@@ -1,0 +1,938 @@
+{
+ "meta": {
+  "model": "claude-sonnet-5-5",
+  "seconds": 37.6,
+  "input_tokens": 9228,
+  "output_tokens": 7742,
+  "stop_reason": "tool_use",
+  "extracted_at": "2026-10-06T13:28:05.389134+00:00"
+ },
+ "response": {
+  "vendor_name": "Shree Balaji",
+  "source_files": [
+   "2_ShreeBalaji_Quotation.pdf",
+   "2b_ShreeBalaji_ISO_Certificate.pdf"
+  ],
+  "quote_date": "2026-09-28",
+  "gst_treatment": "inclusive",
+  "gst_rate_percent": 18.0,
+  "freight_treatment": "delivered",
+  "payment_days": 60,
+  "validity_days": 60,
+  "lead_time_text": "Delivery period: 10 days from PO.",
+  "discounts": [
+   {
+    "description": "Additional special discount",
+    "percent": 3.0,
+    "condition": "applicable on PO value above ₹10,00,000 (Rupees Ten Lakh) per PO",
+    "evidence": {
+     "quote": "Additional 3% special discount applicable on PO value above ₹10,00,000 (Rupees Ten Lakh) per PO.",
+     "location": "Page 2, footnote"
+    }
+   }
+  ],
+  "adders": [],
+  "items": [
+   {
+    "vendor_ref": "CB-301",
+    "description": "Biscuit 200g shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "400x300x200",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "15.95*",
+    "price_value": 15.95,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-301 ... 3 15.95* Per Pc",
+     "location": "Page 1, Sr 1"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-302",
+    "description": "Biscuit 100g shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "360x250x180",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "11.83*",
+    "price_value": 11.83,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-302 ... 3 11.83* Per Pc",
+     "location": "Page 1, Sr 2"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-303",
+    "description": "Rusk 300g shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "420x320x220",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "17.86*",
+    "price_value": 17.86,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-303 ... 3 17.86* Per Pc",
+     "location": "Page 1, Sr 3"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-304",
+    "description": "Namkeen 150g shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "450x300x300",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "20.04*",
+    "price_value": 20.04,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-304 ... 3 20.04* Per Pc",
+     "location": "Page 1, Sr 4"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-305",
+    "description": "Namkeen 400g shipper – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "500x350x320",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "25.31*",
+    "price_value": 25.31,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-305 ... 3 25.31* Per Pc",
+     "location": "Page 1, Sr 5"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-306",
+    "description": "Chips family pack shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "550x400x350",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "30.93*",
+    "price_value": 30.93,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-306 ... 3 30.93* Per Pc",
+     "location": "Page 1, Sr 6"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-307",
+    "description": "Sample/promo box – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "250x200x150",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "7.99*",
+    "price_value": 7.99,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-307 ... 3 7.99* Per Pc",
+     "location": "Page 1, Sr 7"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-308",
+    "description": "E-com mailer small – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "300x220x100",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "8.36*",
+    "price_value": 8.36,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-308 ... 3 8.36* Per Pc",
+     "location": "Page 1, Sr 8"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-309",
+    "description": "E-com mailer medium – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "380x280x140",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "13.03*",
+    "price_value": 13.03,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-309 ... 3 13.03* Per Pc",
+     "location": "Page 1, Sr 9"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-310",
+    "description": "Plain filler box",
+    "product_type": "box",
+    "size_as_written": "350x250x250",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "13.04*",
+    "price_value": 13.04,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-310 Plain filler box 350x250x250 3 13.04* Per Pc",
+     "location": "Page 1, Sr 10"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-501",
+    "description": "Oil 1L x12 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "330x250x290",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "49.02*",
+    "price_value": 49.02,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-501 ... 5 49.02* Per Kg",
+     "location": "Page 1, Sr 11"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-502",
+    "description": "Oil 5L x4 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "380x340x320",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "48.32*",
+    "price_value": 48.32,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-502 ... 5 48.32* Per Kg",
+     "location": "Page 1, Sr 12"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-503",
+    "description": "Ghee 1L jar x12 shipper – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "360x270x200",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "50.63*",
+    "price_value": 50.63,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-503 ... 5 50.63* Per Kg",
+     "location": "Page 1, Sr 13"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-504",
+    "description": "Pickle jar x24 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "400x300x180",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "49.04*",
+    "price_value": 49.04,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-504 ... 5 49.04* Per Kg",
+     "location": "Page 1, Sr 14"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-505",
+    "description": "Sauce bottle x24 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "420x280x230",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "48.52*",
+    "price_value": 48.52,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-505 ... 5 48.52* Per Kg",
+     "location": "Page 1, Sr 15"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-506",
+    "description": "Juice tetra x24 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "400x260x210",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "49.94*",
+    "price_value": 49.94,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-506 ... 5 49.94* Per Kg",
+     "location": "Page 1, Sr 16"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-507",
+    "description": "Atta 5kg x4 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "460x360x300",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "49.18*",
+    "price_value": 49.18,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-507 ... 5 49.18* Per Kg",
+     "location": "Page 1, Sr 17"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-508",
+    "description": "Atta 10kg x2 shipper – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "500x380x320",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "47.99*",
+    "price_value": 47.99,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-508 ... 5 47.99* Per Kg",
+     "location": "Page 1, Sr 18"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-509",
+    "description": "Rice 25kg master carton – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "600x400x350",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "48.64*",
+    "price_value": 48.64,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-509 ... 5 48.64* Per Kg",
+     "location": "Page 1, Sr 19"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-510",
+    "description": "Export master carton – 2-colour flexo",
+    "product_type": "box",
+    "size_as_written": "600x400x400",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "48.94*",
+    "price_value": 48.94,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-510 ... 5 48.94* Per Kg",
+     "location": "Page 1, Sr 20"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-511",
+    "description": "Gift hamper outer – 4-colour flexo",
+    "product_type": "box",
+    "size_as_written": "450x350x150",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": 4,
+    "price_text": "52.91*",
+    "price_value": 52.91,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-511 ... 5 52.91* Per Kg",
+     "location": "Page 1, Sr 21"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-512",
+    "description": "Pallet top/bottom tray",
+    "product_type": "tray",
+    "size_as_written": "1200x1000x100",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "48.47*",
+    "price_value": 48.47,
+    "currency": "INR",
+    "price_unit": "per_kg",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-512 Pallet top/bottom tray 1200x1000x100 5 48.47* Per Kg",
+     "location": "Page 1, Sr 22"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-701",
+    "description": "Heavy-duty bulk carton",
+    "product_type": "box",
+    "size_as_written": "800x600x600",
+    "size_unit": "mm",
+    "ply": 7,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "248.21*",
+    "price_value": 248.21,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-701 Heavy-duty bulk carton 800x600x600 7 248.21* Per Pc",
+     "location": "Page 1, Sr 23"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "CB-702",
+    "description": "Heavy-duty export carton – 1-colour flexo",
+    "product_type": "box",
+    "size_as_written": "700x500x500",
+    "size_unit": "mm",
+    "ply": 7,
+    "paper_spec": null,
+    "print_colours": 1,
+    "price_text": "184.94*",
+    "price_value": 184.94,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "CB-702 ... 7 184.94* Per Pc",
+     "location": "Page 1, Sr 24"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "DC-101",
+    "description": "Die-cut display tray (counter) – 4-colour flexo",
+    "product_type": "die_cut",
+    "size_as_written": "350x250x80",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 4,
+    "price_text": "10.08*",
+    "price_value": 10.08,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "DC-101 ... 3 10.08* Per Pc",
+     "location": "Page 1, Sr 25"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "DC-102",
+    "description": "Die-cut sleeve – 2-colour flexo",
+    "product_type": "die_cut",
+    "size_as_written": "300x200x60",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": 2,
+    "price_text": "6.64*",
+    "price_value": 6.64,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "DC-102 ... 3 6.64* Per Pc",
+     "location": "Page 1, Sr 26"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "PT-101",
+    "description": "Partition set 12-cell (for CB-501)",
+    "product_type": "partition",
+    "size_as_written": "330x250x280",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "4.42*",
+    "price_value": 4.42,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "PT-101 ... 3 4.42* Per Pc",
+     "location": "Page 1, Sr 27"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "PT-102",
+    "description": "Partition set 24-cell (for CB-505)",
+    "product_type": "partition",
+    "size_as_written": "420x280x220",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "6.02*",
+    "price_value": 6.02,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "PT-102 ... 3 6.02* Per Pc",
+     "location": "Page 1, Sr 28"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "PD-101",
+    "description": "Layer pad 400x300",
+    "product_type": "pad",
+    "size_as_written": "400x300",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "2.51*",
+    "price_value": 2.51,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "PD-101 Layer pad 400x300 400x300 3 2.51* Per Pc",
+     "location": "Page 2, Sr 29"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "PD-102",
+    "description": "Layer pad 600x400",
+    "product_type": "pad",
+    "size_as_written": "600x400",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": null,
+    "print_colours": null,
+    "price_text": "9.53*",
+    "price_value": 9.53,
+    "currency": "INR",
+    "price_unit": "per_piece",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "PD-102 Layer pad 600x400 600x400 5 9.53* Per Pc",
+     "location": "Page 2, Sr 30"
+    },
+    "notes": null
+   }
+  ],
+  "questionnaire": [
+   {
+    "question_no": 1,
+    "answer_text": "Yes. Copy of certificate enclosed.",
+    "status": "yes",
+    "evidence": {
+     "quote": "Yes. Copy of certificate enclosed.",
+     "location": "Page 3, Q1"
+    }
+   },
+   {
+    "question_no": 2,
+    "answer_text": "Yes.",
+    "status": "yes",
+    "evidence": {
+     "quote": "Yes.",
+     "location": "Page 3, Q2"
+    }
+   },
+   {
+    "question_no": 3,
+    "answer_text": "600 MT per month",
+    "status": "yes",
+    "evidence": {
+     "quote": "600 MT per month",
+     "location": "Page 3, Q3"
+    }
+   },
+   {
+    "question_no": 4,
+    "answer_text": "10 days",
+    "status": "yes",
+    "evidence": {
+     "quote": "10 days",
+     "location": "Page 3, Q4"
+    }
+   },
+   {
+    "question_no": 5,
+    "answer_text": "Yes, we use food grade water based inks.",
+    "status": "yes",
+    "evidence": {
+     "quote": "Yes, we use food grade water based inks.",
+     "location": "Page 3, Q5"
+    }
+   },
+   {
+    "question_no": 6,
+    "answer_text": "Accepted.",
+    "status": "yes",
+    "evidence": {
+     "quote": "Accepted.",
+     "location": "Page 3, Q6"
+    }
+   },
+   {
+    "question_no": 7,
+    "answer_text": "60 days",
+    "status": "yes",
+    "evidence": {
+     "quote": "60 days",
+     "location": "Page 3, Q7"
+    }
+   },
+   {
+    "question_no": 8,
+    "answer_text": "Prices fixed for 6 months from PO, thereafter revised as per kraft paper rates.",
+    "status": "yes",
+    "evidence": {
+     "quote": "Prices fixed for 6 months from PO, thereafter revised as per kraft paper rates.",
+     "location": "Page 3, Q8"
+    }
+   },
+   {
+    "question_no": 9,
+    "answer_text": "0.8%",
+    "status": "yes",
+    "evidence": {
+     "quote": "0.8%",
+     "location": "Page 3, Q9"
+    }
+   }
+  ],
+  "certificates": [
+   {
+    "standard": "ISO 9001:2015",
+    "certificate_no": "QC/IN/2023/09871",
+    "valid_until": "2026-09-15",
+    "source": "attached_document",
+    "evidence": {
+     "quote": "Certificate No. QC/IN/2023/09871 ... Valid Until 15 September 2026",
+     "location": "2b_ShreeBalaji_ISO_Certificate.pdf, page 1"
+    }
+   }
+  ],
+  "refers_to_prior": [],
+  "terms_evidence": [
+   {
+    "quote": "Terms: Delivery: FOR your Bawal plant. Payment: 60 days. Delivery period: 10 days from PO. Validity: 60 days.",
+    "location": "Page 2, terms paragraph"
+   },
+   {
+    "quote": "* Rates are inclusive of GST @ 18%. Per Kg rates are on finished box weight; actual weight per box to be confirmed on sample approval.",
+    "location": "Page 2, footnote"
+   },
+   {
+    "quote": "Prices fixed for 6 months from date of PO, thereafter subject to kraft paper price.",
+    "location": "Page 2, footnote"
+   }
+  ],
+  "extraction_warnings": [
+   "All rates carry '*' meaning inclusive of GST @ 18% per footnote.",
+   "Items CB-501 to CB-512 (5-ply) are priced Per Kg on finished box weight; actual weight per box is 'to be confirmed on sample approval', so per-box cost is not determinable from the quote. CB-701/702 and all others are Per Pc.",
+   "Validity stated as 60 days, while footnote says prices fixed for 6 months from date of PO, thereafter subject to kraft paper price.",
+   "CB-310 'Plain filler box', CB-512, CB-701 and PT/PD lines give no print colour count; not recorded. Vendor does not state whether any rate excludes printing.",
+   "No GSM/BF paper spec stated anywhere in the quotation.",
+   "ISO certificate valid-until date (15 September 2026) is as printed; quote is dated 28.09.2026. Recorded only, not judged. Certificate footer says issuer is 'fictional body for demo dataset'.",
+   "Quote header size column is '(mm)'; sizes recorded in mm."
+  ]
+ },
+ "ai_matches": []
+}

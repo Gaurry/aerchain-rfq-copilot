@@ -1,0 +1,920 @@
+{
+ "meta": {
+  "model": "claude-sonnet-5-5",
+  "seconds": 44.2,
+  "input_tokens": 3815,
+  "output_tokens": 9491,
+  "stop_reason": "tool_use",
+  "extracted_at": "2026-10-06T13:27:25.887981+00:00"
+ },
+ "response": {
+  "vendor_name": "Kraftline",
+  "source_files": [
+   "1_Kraftline_Offer.xlsx"
+  ],
+  "quote_date": "2026-09-29",
+  "gst_treatment": "exclusive",
+  "gst_rate_percent": 18.0,
+  "freight_treatment": "delivered",
+  "payment_days": 45,
+  "validity_days": 90,
+  "lead_time_text": "7 working days from PO, staggered as per schedule",
+  "discounts": [],
+  "adders": [],
+  "items": [
+   {
+    "vendor_ref": "KP-5001",
+    "description": "RSC 5 Ply 330x250x290 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "330x250x290 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "22060",
+    "price_value": 22060.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5001 | RSC 5 Ply 330x250x290 mm | ... | 140000 | 22060",
+     "location": "Quotation!R10, column E (Rate ₹ / 1000 Nos)"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5002",
+    "description": "RSC 5 Ply 380x340x320 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "380x340x320 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "32915",
+    "price_value": 32915.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5002 | RSC 5 Ply 380x340x320 mm | ... | 60000 | 32915",
+     "location": "Quotation!R11, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5003",
+    "description": "RSC 5 Ply 360x270x200 mm | 180/150/150/120/120 GSM 20BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "360x270x200 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 2,
+    "price_text": "21750",
+    "price_value": 21750.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5003 | RSC 5 Ply 360x270x200 mm | ... | 50000 | 21750",
+     "location": "Quotation!R12, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5004",
+    "description": "RSC 5 Ply 400x300x180 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "400x300x180 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "24470",
+    "price_value": 24470.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5004 | RSC 5 Ply 400x300x180 mm | ... | 45000 | 24470",
+     "location": "Quotation!R13, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5005A",
+    "description": "RSC 5 Ply 400x300x180 mm | 150/100/150/100/150 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "400x300x180 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "150/100/150/100/150 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "21345",
+    "price_value": 21345.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": true,
+    "alternate_note": "ALTERNATE – value engineered, same BCT achievable, saves ~14%",
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5005A | RSC 5 Ply 400x300x180 mm | 150/100/150/100/150 GSM 18BF | ... | 21345 | ALTERNATE – value engineered, same BCT achievable, saves ~14%",
+     "location": "Quotation!R14, columns E and G"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5006",
+    "description": "RSC 5 Ply 420x280x230 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "420x280x230 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "25030",
+    "price_value": 25030.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5006 | RSC 5 Ply 420x280x230 mm | ... | 70000 | 25030",
+     "location": "Quotation!R15, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5007",
+    "description": "RSC 5 Ply 400x260x210 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "400x260x210 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "22000",
+    "price_value": 22000.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5007 | RSC 5 Ply 400x260x210 mm | ... | 110000 | 22000",
+     "location": "Quotation!R16, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5008A",
+    "description": "RSC 5 Ply 400x260x210 mm | 150/100/150/100/150 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "400x260x210 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "150/100/150/100/150 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "19780",
+    "price_value": 19780.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": true,
+    "alternate_note": "ALTERNATE – value engineered, same BCT achievable, saves ~14%",
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5008A | RSC 5 Ply 400x260x210 mm | 150/100/150/100/150 GSM 18BF | ... | 19780 | ALTERNATE – value engineered, same BCT achievable, saves ~14%",
+     "location": "Quotation!R17, columns E and G"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5009",
+    "description": "RSC 5 Ply 460x360x300 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "460x360x300 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "38325",
+    "price_value": 38325.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5009 | RSC 5 Ply 460x360x300 mm | ... | 65000 | 38325",
+     "location": "Quotation!R18, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5010",
+    "description": "RSC 5 Ply 500x380x320 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "500x380x320 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "44130",
+    "price_value": 44130.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5010 | RSC 5 Ply 500x380x320 mm | ... | 40000 | 44130",
+     "location": "Quotation!R19, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5011",
+    "description": "RSC 5 Ply 600x400x350 mm | 180/150/150/120/120 GSM 20BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "600x400x350 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 1,
+    "price_text": "52455",
+    "price_value": 52455.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5011 | RSC 5 Ply 600x400x350 mm | ... | 25000 | 52455",
+     "location": "Quotation!R20, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5012",
+    "description": "RSC 5 Ply 600x400x400 mm | 180/150/150/120/120 GSM 20BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "600x400x400 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 2,
+    "price_text": "55855",
+    "price_value": 55855.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5012 | RSC 5 Ply 600x400x400 mm | ... | 30000 | 55855",
+     "location": "Quotation!R21, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5013",
+    "description": "RSC 5 Ply 450x350x150 mm | 180/150/150/120/120 GSM 20BF | 4 Col",
+    "product_type": "box",
+    "size_as_written": "450x350x150 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": 4,
+    "price_text": "30905",
+    "price_value": 30905.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5013 | RSC 5 Ply 450x350x150 mm | ... | 15000 | 30905",
+     "location": "Quotation!R22, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5014",
+    "description": "Tray 5 Ply 1200x1000x100 mm | 180/150/150/120/120 GSM 20BF | Plain",
+    "product_type": "tray",
+    "size_as_written": "1200x1000x100 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": null,
+    "price_text": "54860",
+    "price_value": 54860.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5014 | Tray 5 Ply 1200x1000x100 mm | ... | 8000 | 54860",
+     "location": "Quotation!R23, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-5015",
+    "description": "Pad 5 Ply 600x400 mm | 180/150/150/120/120 GSM 20BF | Plain",
+    "product_type": "pad",
+    "size_as_written": "600x400 mm",
+    "size_unit": "mm",
+    "ply": 5,
+    "paper_spec": "180/150/150/120/120 GSM 20BF",
+    "print_colours": null,
+    "price_text": "8110",
+    "price_value": 8110.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-5015 | Pad 5 Ply 600x400 mm | ... | 60000 | 8110",
+     "location": "Quotation!R24, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3016",
+    "description": "RSC 3 Ply 400x300x200 mm | 150/150/120 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "400x300x200 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "13875",
+    "price_value": 13875.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3016 | RSC 3 Ply 400x300x200 mm | ... | 180000 | 13875",
+     "location": "Quotation!R26, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3017",
+    "description": "RSC 3 Ply 360x250x180 mm | 150/150/120 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "360x250x180 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "10525",
+    "price_value": 10525.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3017 | RSC 3 Ply 360x250x180 mm | ... | 220000 | 10525",
+     "location": "Quotation!R27, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3018",
+    "description": "RSC 3 Ply 420x320x220 mm | 150/150/120 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "420x320x220 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "15970",
+    "price_value": 15970.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3018 | RSC 3 Ply 420x320x220 mm | ... | 90000 | 15970",
+     "location": "Quotation!R28, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3019",
+    "description": "RSC 3 Ply 450x300x300 mm | 150/150/120 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "450x300x300 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "17355",
+    "price_value": 17355.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3019 | RSC 3 Ply 450x300x300 mm | ... | 150000 | 17355",
+     "location": "Quotation!R29, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3020",
+    "description": "RSC 3 Ply 500x350x320 mm | 150/150/120 GSM 18BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "500x350x320 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 2,
+    "price_text": "22740",
+    "price_value": 22740.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3020 | RSC 3 Ply 500x350x320 mm | ... | 80000 | 22740",
+     "location": "Quotation!R30, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3021",
+    "description": "RSC 3 Ply 550x400x350 mm | 150/150/120 GSM 18BF | 1 Col",
+    "product_type": "box",
+    "size_as_written": "550x400x350 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 1,
+    "price_text": "27315",
+    "price_value": 27315.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3021 | RSC 3 Ply 550x400x350 mm | ... | 120000 | 27315",
+     "location": "Quotation!R31, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3022",
+    "description": "RSC 3 Ply 250x200x150 mm | 150/150/120 GSM 18BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "250x200x150 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 2,
+    "price_text": "7120",
+    "price_value": 7120.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3022 | RSC 3 Ply 250x200x150 mm | ... | 60000 | 7120",
+     "location": "Quotation!R32, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3023",
+    "description": "RSC 3 Ply 300x220x100 mm | 150/150/120 GSM 18BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "300x220x100 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 2,
+    "price_text": "7625",
+    "price_value": 7625.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3023 | RSC 3 Ply 300x220x100 mm | ... | 100000 | 7625",
+     "location": "Quotation!R33, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3024",
+    "description": "RSC 3 Ply 380x280x140 mm | 150/150/120 GSM 18BF | 2 Col",
+    "product_type": "box",
+    "size_as_written": "380x280x140 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 2,
+    "price_text": "11510",
+    "price_value": 11510.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3024 | RSC 3 Ply 380x280x140 mm | ... | 70000 | 11510",
+     "location": "Quotation!R34, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3025",
+    "description": "RSC 3 Ply 350x250x250 mm | 150/150/120 GSM 18BF | Plain",
+    "product_type": "box",
+    "size_as_written": "350x250x250 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": null,
+    "price_text": "11475",
+    "price_value": 11475.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3025 | RSC 3 Ply 350x250x250 mm | ... | 50000 | 11475",
+     "location": "Quotation!R35, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3026",
+    "description": "Die-cut 3 Ply 300x200x60 mm | 150/150/120 GSM 18BF | 2 Col",
+    "product_type": "die_cut",
+    "size_as_written": "300x200x60 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": 2,
+    "price_text": "5800",
+    "price_value": 5800.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3026 | Die-cut 3 Ply 300x200x60 mm | ... | 60000 | 5800",
+     "location": "Quotation!R36, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3027",
+    "description": "Pad 3 Ply 400x300 mm | 150/150/120 GSM 18BF | Plain",
+    "product_type": "pad",
+    "size_as_written": "400x300 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": null,
+    "price_text": "2070",
+    "price_value": 2070.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3027 | Pad 3 Ply 400x300 mm | ... | 300000 | 2070",
+     "location": "Quotation!R37, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3028",
+    "description": "Partition 3 Ply 330x250x280 mm | 150/150/120 GSM 18BF | Plain",
+    "product_type": "partition",
+    "size_as_written": "330x250x280 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": null,
+    "price_text": "3660",
+    "price_value": 3660.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3028 | Partition 3 Ply 330x250x280 mm | ... | 140000 | 3660",
+     "location": "Quotation!R38, column E"
+    },
+    "notes": null
+   },
+   {
+    "vendor_ref": "KP-3029",
+    "description": "Partition 3 Ply 420x280x220 mm | 150/150/120 GSM 18BF | Plain",
+    "product_type": "partition",
+    "size_as_written": "420x280x220 mm",
+    "size_unit": "mm",
+    "ply": 3,
+    "paper_spec": "150/150/120 GSM 18BF",
+    "print_colours": null,
+    "price_text": "5100",
+    "price_value": 5100.0,
+    "currency": "INR",
+    "price_unit": "per_1000",
+    "scope": "single_item",
+    "scope_description": null,
+    "is_alternate_spec": false,
+    "alternate_note": null,
+    "plain_box_rate": false,
+    "handwritten": false,
+    "legibility": "clear",
+    "evidence": {
+     "quote": "KP-3029 | Partition 3 Ply 420x280x220 mm | ... | 70000 | 5100",
+     "location": "Quotation!R39, column E"
+    },
+    "notes": null
+   }
+  ],
+  "questionnaire": [
+   {
+    "question_no": 1,
+    "answer_text": "Yes – Cert No. QMS/IN/22841, valid till 14-Mar-2028",
+    "status": "partial",
+    "evidence": {
+     "quote": "Yes – Cert No. QMS/IN/22841, valid till 14-Mar-2028",
+     "location": "T&C + Compliance!R10"
+    }
+   },
+   {
+    "question_no": 2,
+    "answer_text": "Yes, with every dispatch",
+    "status": "yes",
+    "evidence": {
+     "quote": "Yes, with every dispatch",
+     "location": "T&C + Compliance!R11"
+    }
+   },
+   {
+    "question_no": 3,
+    "answer_text": "1,200 MT/month (3 corrugation lines)",
+    "status": "yes",
+    "evidence": {
+     "quote": "1,200 MT/month (3 corrugation lines)",
+     "location": "T&C + Compliance!R12"
+    }
+   },
+   {
+    "question_no": 4,
+    "answer_text": "7 days",
+    "status": "yes",
+    "evidence": {
+     "quote": "7 days",
+     "location": "T&C + Compliance!R13"
+    }
+   },
+   {
+    "question_no": 5,
+    "answer_text": "Yes – water based inks, declaration attached on request",
+    "status": "yes",
+    "evidence": {
+     "quote": "Yes – water based inks, declaration attached on request",
+     "location": "T&C + Compliance!R14"
+    }
+   },
+   {
+    "question_no": 6,
+    "answer_text": "No – 45 days",
+    "status": "no",
+    "evidence": {
+     "quote": "No – 45 days",
+     "location": "T&C + Compliance!R15"
+    }
+   },
+   {
+    "question_no": 7,
+    "answer_text": "90 days",
+    "status": "yes",
+    "evidence": {
+     "quote": "90 days",
+     "location": "T&C + Compliance!R16"
+    }
+   },
+   {
+    "question_no": 8,
+    "answer_text": "Quarterly, kraft paper index linked",
+    "status": "yes",
+    "evidence": {
+     "quote": "Quarterly, kraft paper index linked",
+     "location": "T&C + Compliance!R17"
+    }
+   },
+   {
+    "question_no": 9,
+    "answer_text": "0.4%",
+    "status": "yes",
+    "evidence": {
+     "quote": "0.4%",
+     "location": "T&C + Compliance!R18"
+    }
+   }
+  ],
+  "certificates": [
+   {
+    "standard": "ISO 9001:2015",
+    "certificate_no": "QMS/IN/22841",
+    "valid_until": "2028-03-14",
+    "source": "stated_in_response",
+    "evidence": {
+     "quote": "Yes – Cert No. QMS/IN/22841, valid till 14-Mar-2028",
+     "location": "T&C + Compliance!R10, column B"
+    }
+   }
+  ],
+  "refers_to_prior": [],
+  "terms_evidence": [
+   {
+    "quote": "Rates are FOR your Bawal plant. GST @18% extra as applicable.",
+    "location": "Quotation!R41"
+   },
+   {
+    "quote": "Alternate specs offered for your consideration – please confirm before PO.",
+    "location": "Quotation!R42"
+   },
+   {
+    "quote": "FOR Bawal, freight included",
+    "location": "T&C + Compliance!R2"
+   },
+   {
+    "quote": "GST @18% extra",
+    "location": "T&C + Compliance!R3"
+   },
+   {
+    "quote": "45 days from invoice (we are unable to accept 60 days)",
+    "location": "T&C + Compliance!R4"
+   },
+   {
+    "quote": "90 days from offer date",
+    "location": "T&C + Compliance!R5"
+   },
+   {
+    "quote": "7 working days from PO, staggered as per schedule",
+    "location": "T&C + Compliance!R6"
+   },
+   {
+    "quote": "Quarterly, linked to kraft paper index (+/- 5% band)",
+    "location": "T&C + Compliance!R7"
+   }
+  ],
+  "extraction_warnings": [
+   "Q1 asked for a copy of the ISO certificate; none is attached in the files provided, only the certificate number and validity date are stated in the response, so status recorded as partial.",
+   "Lead time: Q4 answer says '7 days' while T&C says '7 working days from PO, staggered as per schedule'; recorded both as written.",
+   "Price revision clause (quarterly, kraft paper index linked, +/- 5% band) means the quoted rates may change; the band's base and application are not defined.",
+   "Q5: declaration on inks is 'attached on request' – not actually attached.",
+   "Plain items (tray, pads, partitions, KP-3025) are labelled 'Plain' in the description; print_colours left null. No statement that other rates exclude printing.",
+   "Rates are per 1000 Nos per the column header; the 'Value (₹ Lakh)' column was not recorded as a price. Alternate lines KP-5005A and KP-5008A are offered alongside KP-5004 and KP-5007 for the same sizes."
+  ]
+ },
+ "ai_matches": []
+}

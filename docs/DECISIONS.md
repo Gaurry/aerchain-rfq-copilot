@@ -33,6 +33,14 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - **Product type must match.** A box can't match a partition just because sizes are close.
 - **"Not quoted" is explicit**, never zero or blank, so a vendor's total can't look artificially low.
 
+- **Items described only in words go to an AI matcher; rules then accept or reject.** Pacific wrote "the namkeen 150g shipper" with no code or size. The model proposes a match with a reason and confidence; code rejects anything that breaks ply, product type or one-to-one rules. The AI suggests, the rules decide.
+- **Extraction model: Claude Sonnet 5.5.** Strong on documents and photos, far cheaper than Opus. Roughly 35–45s per vendor file; results are saved, with a re-run button, so the demo never waits on the API.
+- **The model doesn't guess units.** Gupta's handwritten "Pad 16x12" has no unit, so it recorded "unknown". The matcher infers inches from the magnitude and flags it. Honest uncertainty beats a confident guess.
+
+## Results from real extraction (first run)
+- Prices 133/133 within 1% of the answer key; coverage 150/150 (every quoted / not-quoted call right); facts and flags 21/21 (footnote discount, expired cert date, 4 handwritten values, 2 alternates, USD, terms).
+- First run scored 129/150 on coverage: the gap was description-only items, which led to the AI matching step. That's the eval loop working as intended.
+
 ## Normalization (deterministic)
 - **One comparable basis:** ₹ per piece, landed at Bawal, before GST.
 - **Every step recorded in a ledger** the buyer can open from any cell (e.g. ₹49.02/kg incl. GST → ÷1.18 → −3% → × 0.566 kg = ₹22.81).
