@@ -464,7 +464,7 @@ elif ss.step == "responses":
 # ================================================================= 4. Review
 elif ss.step == "review":
     groups = review_groups()
-    unplaced = {v: items for v, items in comp.unplaced.items() if items and v not in ss.ack_unplaced}
+    unplaced = {v: items for v, items in getattr(comp, "unplaced", {}).items() if items and v not in ss.ack_unplaced}
     total_decided = len(d.approved) + len(d.corrected) + len(d.excluded) + len(d.asked)
     queued = {v: pts for v, pts in ss.ask_queue.items() if pts}
     st.subheader("Review")
