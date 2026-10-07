@@ -20,7 +20,7 @@ import plotly.express as px
 import streamlit as st
 
 from core import analyst, copilot
-from core.compare import ALLOWED, Decisions, award_total, build, l1, log_correction
+from core.compare import ALLOWED, Decisions, award_total, build, l1, log_correction, savings
 from core.draft import RFQDraft
 from core.emails import CONTACTS, draft_followup, nice_date, rfq_email, template_followup
 from core.extract import INBOX, MODEL, OUT, VENDOR_FILES, _api_key, load_ai_matches, load_extracted, read_and_match
@@ -106,6 +106,12 @@ def client() -> anthropic.Anthropic:
 
 def money(x: float) -> str:
     return f"₹{x/1e5:,.1f} L"
+
+
+def saving_text(sv: dict) -> str:
+    """'₹3.3 L lower' / '₹1.2 L higher', never a negative saving."""
+    x = sv["saving"]
+    return f"{money(abs(x))} {'lower' if x >= 0 else 'higher'}"
 
 
 def crore(x: float) -> str:
@@ -582,10 +588,11 @@ elif ss.step == "compare":
                      help="Filters by the supplier-questionnaire gate. Flip it to see what quality costs.")
     winners = l1(comp, ALLOWED[scope])
     total = award_total(comp, winners)
-    ly_same = sum(by_code[c].ly_price * by_code[c].annual_qty for c in winners if by_code[c].ly_price)
+    sv = savings(comp, winners)
     k1, k2, k3 = st.columns(3)
     k1.metric("Cheapest-per-line award", money(total))
-    k2.metric("Saving vs last year", money(ly_same - total))
+    k2.metric("vs last year, same lines", saving_text(sv),
+              help="Compared only on lines that existed last year. New lines are costed separately.")
     k3.metric("Lines covered", f"{len(winners)} / {len(lines)}")
     gcols = st.columns(len(comp.vendors))
     for col, v in zip(gcols, comp.vendors):
@@ -678,10 +685,11 @@ elif ss.step == "award":
     scope_a = st.radio("Who can win a line?", list(ALLOWED), index=0, horizontal=True, key="award_scope")
     wins = l1(comp, ALLOWED[scope_a])
     tot = award_total(comp, wins)
-    ly_same = sum(by_code[c].ly_price * by_code[c].annual_qty for c in wins if by_code[c].ly_price)
+    sv = savings(comp, wins)
     k1, k2, k3 = st.columns(3)
     k1.metric("Annual cost", money(tot))
-    k2.metric("Saving vs last year", money(ly_same - tot))
+    k2.metric("vs last year, same lines", saving_text(sv),
+              help="Compared only on lines that existed last year. New lines are costed separately.")
     k3.metric("Lines awarded", f"{len(wins)} / {len(lines)}")
     _award_rows = [{"Code": c, "Item": by_code[c].description, "Vendor": v, "₹/pc": round(p, 2),
                               "Annual qty": by_code[c].annual_qty, "Annual cost (₹)": round(p * by_code[c].annual_qty),
@@ -691,8 +699,11 @@ elif ss.step == "award":
     split = award_df.groupby("Vendor").agg(Lines=("Code", "count"), **{"Annual cost (₹)": ("Annual cost (₹)", "sum")}).reset_index()
     split = split.sort_values("Annual cost (₹)", ascending=False)
     parts = " and ".join(f"{r.Lines} line{'s' if r.Lines > 1 else ''} to {r.Vendor}" for r in split.itertuples())
-    st.markdown(f"#### Award {parts}: **{crore(tot)}** a year, **{money(ly_same - tot)}** "
-                f"{'below' if ly_same >= tot else 'above'} last year.")
+    new_note = (f" New this year: {', '.join(sv['new_lines'])} ({money(sv['new_cost'])}), not in the comparison with last year."
+                if sv["new_lines"] else "")
+    st.markdown(f"#### Award {parts}: **{crore(tot)}** a year, **{saving_text(sv)}** than last year on the same lines.")
+    if new_note:
+        st.caption(new_note.strip())
     if scope_a == "Cleared only":
         alt = l1(comp, ALLOWED["Cleared + conditional"])
         alt_tot = award_total(comp, alt)

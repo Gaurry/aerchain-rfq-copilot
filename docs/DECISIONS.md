@@ -57,6 +57,7 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - **"Not quoted" in words, never "None", never zero,** plus a totals row with coverage (e.g. "₹384.1 L · 27/30") and the warning that totals across different line counts aren't comparable.
 - **Indian formats:** 1,23,45,678 grouping, ₹ lakh chart axes, dates as 15 Sep 2026; L1 shown per line.
 - **The award says what to do:** "Award 26 lines to Kraftline and 4 to Om Sai: ₹4.08 Cr", plus "If Shree Balaji fixes the open quality issue, the award drops to ₹3.95 Cr: ₹12.9 L cheaper."
+- **Savings are like-for-like only.** Adding a new line (the 2 kg atta shipper) briefly turned "saving vs last year" negative, because its cost counted this year but it had no last-year price. Savings now compare only lines that existed last year, and new lines are costed separately, on screen and in the analyst.
 - **FX states its basis** (RBI reference rate, 30 Sep 2026, assumed, editable).
 
 ## Simplified flow (after first review of the app)

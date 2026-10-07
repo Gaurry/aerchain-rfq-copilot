@@ -114,3 +114,15 @@ def log_correction(record: dict) -> None:
     CORRECTIONS_LOG.parent.mkdir(parents=True, exist_ok=True)
     with CORRECTIONS_LOG.open("a") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def savings(comp: Comparison, winners: dict[str, tuple[str, float]]) -> dict:
+    """Saving vs last year on like-for-like lines only. New lines (no last-year price) are costed separately,
+    never mixed into the saving."""
+    by = {l.code: l for l in comp.lines}
+    old = [c for c in winners if by[c].ly_price]
+    new = [c for c in winners if not by[c].ly_price]
+    now_same = sum(winners[c][1] * by[c].annual_qty for c in old)
+    ly_same = sum(by[c].ly_price * by[c].annual_qty for c in old)
+    return {"saving": ly_same - now_same, "ly_same": ly_same, "now_same": now_same,
+            "new_lines": new, "new_cost": sum(winners[c][1] * by[c].annual_qty for c in new)}

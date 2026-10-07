@@ -154,6 +154,7 @@ class Analyst:
                          "annual_cost": round(p * self.by[code].annual_qty)})
             total += p * self.by[code].annual_qty
         ly, no_hist = self.ly_cost([r["code"] for r in rows])
+        same = sum(r["annual_cost"] for r in rows if r["code"] not in no_hist)
         by_vendor = {}
         for r in rows:
             by_vendor.setdefault(r["winner"], {"lines": 0, "annual_cost": 0})
@@ -161,7 +162,8 @@ class Analyst:
         return {"scope": SCOPES[scope], "excluded_vendors": sorted(ex),
                 "vendors_eligible": [v for v in self.c.vendors if v not in ex and self.c.gates[v].status in ALLOWED[SCOPES[scope]]],
                 "lines_considered": len(cs), "total_annual_cost": round(total), "last_year_cost_same_lines": round(ly),
-                "saving_vs_last_year": round(ly - total), "lines_awarded": len(rows), "lines_with_no_eligible_quote": none,
+                "saving_vs_last_year_same_lines": round(ly - same),
+                "new_lines_cost_not_in_saving": round(total - same), "lines_awarded": len(rows), "lines_with_no_eligible_quote": none,
                 "lines_without_last_year_price": no_hist, "by_vendor": by_vendor, "lines": rows}
 
     def award_scenario(self, assignments=None, rest="leave_out", exclude_vendors=None):
@@ -181,6 +183,7 @@ class Analyst:
                 picks.setdefault(code, wp)
         total = sum(p * self.by[c].annual_qty for c, (_, p) in picks.items())
         ly, no_hist = self.ly_cost(list(picks))
+        same = sum(p * self.by[c].annual_qty for c, (_, p) in picks.items() if c not in no_hist)
         by_vendor = {}
         for code, (v, p) in picks.items():
             by_vendor.setdefault(v, {"lines": [], "annual_cost": 0})
@@ -188,7 +191,8 @@ class Analyst:
         uncovered = [l.code for l in self.c.lines if l.code not in picks]
         risks = sorted({f"{v}: {self.c.gates[v].label}" + (f" ({self.c.gates[v].reasons[0]})" if self.c.gates[v].reasons else "")
                         for v in by_vendor if self.c.gates[v].status != "cleared"})
-        return {"total_annual_cost": round(total), "last_year_cost_same_lines": round(ly), "saving_vs_last_year": round(ly - total),
+        return {"total_annual_cost": round(total), "last_year_cost_same_lines": round(ly), "saving_vs_last_year_same_lines": round(ly - same),
+                "new_lines_cost_not_in_saving": round(total - same),
                 "by_vendor": by_vendor, "lines_not_awarded": uncovered, "problems": problems, "quality_risks": risks,
                 "lines_without_last_year_price": no_hist}
 
