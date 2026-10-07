@@ -19,8 +19,13 @@ CODES = {"type": "array", "items": {"type": "string"}, "description": "Item code
 VENDORS = {"type": "array", "items": {"type": "string"}}
 
 TOOLS = [
-    {"name": "find_lines", "description": "Find RFQ lines by code or words in the description. Use before answering about specific items.",
-     "input_schema": {"type": "object", "required": ["query"], "properties": {"query": {"type": "string"}}}},
+    {"name": "find_lines", "description": "Find RFQ lines by code, words in the description, ply (3/5/7), box type "
+     "(RSC, Tray, Die-cut, Partition, Pad) or size. Use before answering about specific items or groups like '5-ply' or "
+     "'partitions'. Every result lists code, description, type, size, ply and print.",
+     "input_schema": {"type": "object", "properties": {
+         "query": {"type": "string", "description": "Code or description words; omit to filter only by ply/type"},
+         "ply": {"type": "integer", "enum": [3, 5, 7]},
+         "box_type": {"type": "string", "enum": ["RSC", "Tray", "Die-cut", "Partition", "Pad"]}}}},
     {"name": "compare_lines", "description": "Normalized ₹/pc for each vendor on the given lines, with last year's price and open review flags.",
      "input_schema": {"type": "object", "properties": {"codes": CODES, "vendors": VENDORS}}},
     {"name": "cheapest_per_line", "description": "Cheapest eligible quote per line and the total annual cost and saving of awarding each line to it.",
@@ -85,26 +90,47 @@ class Analyst:
         return sum(self.by[c].ly_price * self.by[c].annual_qty for c in known), [c for c in codes if c not in known]
 
     # ---- tools ---------------------------------------------------------------
-    def find_lines(self, query: str):
-        q = query.strip().upper()
-        if q in self.by:
-            l = self.by[q]
-            return [{"code": l.code, "description": l.description, "size_mm": l.dims_label, "ply": l.ply}]
-        words = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 1 and not re.fullmatch(r"cb|pt|pd|dc", w)]
-        hits = [l for l in self.c.lines if words and all(w in (l.description + " " + l.code).lower() for w in words)]
+    @staticmethod
+    def line_info(l) -> dict:
+        return {"code": l.code, "description": l.description, "type": l.box_type, "size_mm": l.dims_label,
+                "ply": l.ply, "print": "plain" if not l.print_colours else f"{l.print_colours} colour",
+                "annual_qty": l.annual_qty}
+
+    def find_lines(self, query: str | None = None, ply: int | None = None, box_type: str | None = None):
+        pool = self.c.lines
+        q = (query or "").strip()
+        # "5-ply", "5 ply", "3ply" inside the query text become a ply filter
+        m = re.search(r"\b([357])\s*-?\s*ply\b", q, re.I)
+        if m and not ply:
+            ply = int(m.group(1)); q = (q[:m.start()] + q[m.end():]).strip()
+        if ply:
+            pool = [l for l in pool if l.ply == int(ply)]
+        if box_type:
+            pool = [l for l in pool if l.box_type.lower() == box_type.lower()]
+        if not q:
+            return {"count": len(pool), "lines": [self.line_info(l) for l in pool]}
+        code_like = re.fullmatch(r"([A-Za-z]{2})\s*-?\s*(\d{2,3})", q)
+        if code_like:
+            code = f"{code_like.group(1).upper()}-{code_like.group(2)}"
+            if code in self.by:
+                return {"count": 1, "lines": [self.line_info(self.by[code])]}
+            close = difflib.get_close_matches(code, list(self.by), n=3, cutoff=0.5)
+            return {"count": 0, "note": f"There is no line {code} in this RFQ.",
+                    "closest": [self.line_info(self.by[c]) for c in close]}
+        words = [w for w in re.findall(r"\w+", q.lower()) if len(w) > 1 and not re.fullmatch(r"cb|pt|pd|dc|line|lines|box|boxes", w)]
+        hits = [l for l in pool if words and all(w in f"{l.description} {l.code} {l.box_type} {l.dims_label}".lower() for w in words)]
         if hits:
-            return [{"code": l.code, "description": l.description, "size_mm": l.dims_label, "ply": l.ply} for l in hits]
-        close = difflib.get_close_matches(q, list(self.by), n=3, cutoff=0.5)
-        return {"matches": [], "note": f"No line matches '{query}'.",
-                "closest": [{"code": c, "description": self.by[c].description} for c in close]}
+            return {"count": len(hits), "lines": [self.line_info(l) for l in hits]}
+        close = difflib.get_close_matches(q.upper(), list(self.by), n=3, cutoff=0.5)
+        return {"count": 0, "note": f"No line matches '{query}'.",
+                "closest": [self.line_info(self.by[c]) for c in close]}
 
     def compare_lines(self, codes=None, vendors=None):
         vs = [self.vendor(v) for v in vendors] if vendors else self.c.vendors
         rows = []
         for code in self.codes(codes):
             l = self.by[code]
-            rows.append({"code": code, "description": l.description, "annual_qty": l.annual_qty,
-                         "last_year_price": l.ly_price,
+            rows.append({**self.line_info(l), "last_year_price": l.ly_price,
                          "prices": {v: (round(p, 2) if (p := self.price(v, code)) is not None else "not quoted") for v in vs},
                          "open_flags": {v: len(self.c.open_flags(v, code, self.d)) for v in vs if (v, code) in self.c.cells}})
         return {"basis": "₹/pc delivered to Bawal, before GST",
@@ -122,7 +148,8 @@ class Analyst:
             others = sorted((self.price(o, code), o) for o in self.c.vendors
                             if o != v and o not in ex and self.c.gates[o].status in ALLOWED[SCOPES[scope]]
                             and self.price(o, code) is not None)
-            rows.append({"code": code, "description": self.by[code].description, "winner": v, "price": round(p, 2),
+            rows.append({"code": code, "description": self.by[code].description, "ply": self.by[code].ply,
+                         "winner": v, "price": round(p, 2),
                          "runner_up": f"{others[0][1]} ₹{others[0][0]:.2f}" if others else "none",
                          "annual_cost": round(p * self.by[code].annual_qty)})
             total += p * self.by[code].annual_qty
@@ -133,7 +160,7 @@ class Analyst:
             by_vendor[r["winner"]]["lines"] += 1; by_vendor[r["winner"]]["annual_cost"] += r["annual_cost"]
         return {"scope": SCOPES[scope], "excluded_vendors": sorted(ex),
                 "vendors_eligible": [v for v in self.c.vendors if v not in ex and self.c.gates[v].status in ALLOWED[SCOPES[scope]]],
-                "total_annual_cost": round(total), "last_year_cost_same_lines": round(ly),
+                "lines_considered": len(cs), "total_annual_cost": round(total), "last_year_cost_same_lines": round(ly),
                 "saving_vs_last_year": round(ly - total), "lines_awarded": len(rows), "lines_with_no_eligible_quote": none,
                 "lines_without_last_year_price": no_hist, "by_vendor": by_vendor, "lines": rows}
 

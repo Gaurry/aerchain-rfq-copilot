@@ -14,8 +14,20 @@ from .rfq import QUESTIONNAIRE, Assumptions, load_vendor_history
 from .schema import VendorResponse
 
 MANDATORY = [q["no"] for q in QUESTIONNAIRE if q["type"] == "mandatory"]
-LABEL = {"cleared": "Cleared", "cleared_stale": "Cleared (old answers)", "conditional": "Conditional",
-         "failed": "Failed", "unknown": "Unknown"}
+LABEL = {"cleared": "Cleared", "cleared_stale": "Cleared on last year's answers", "conditional": "Conditional",
+         "failed": "Failed", "unknown": "No questionnaire"}
+
+
+def _d(text) -> str:
+    """Dates as 30 Sep 2026, whatever format they arrived in."""
+    from datetime import datetime
+    t = str(text).strip()
+    for fmt in ("%Y-%m-%d", "%d-%b-%Y", "%d-%m-%Y", "%d/%m/%Y"):
+        try:
+            return datetime.strptime(t, fmt).strftime("%-d %b %Y")
+        except ValueError:
+            pass
+    return t
 
 
 @dataclass
@@ -54,9 +66,9 @@ def assess(resp: VendorResponse, a: Assumptions, history: pd.DataFrame | None = 
         dated = hist[hist["Item"].astype(str).str.startswith("Q")]
         when = dated["Date on file"].iloc[0] if not dated.empty else "an earlier date"
         iso = hist[hist["Item"].astype(str).str.startswith("Q1")]["Value"]
-        g = Gate(v, "cleared_stale", [f"Answers taken from the submission on file ({when}); not re-confirmed"])
+        g = Gate(v, "cleared_stale", [f"Answers taken from their submission of {_d(when)}; not re-confirmed this year"])
         if not iso.empty:
-            g.notes.append(f"ISO on file: {iso.iloc[0]}")
+            g.notes.append(f"ISO on file: {re.sub(r'(\d{1,2}-[A-Za-z]{3}-\d{4})', lambda m: _d(m.group(1)), str(iso.iloc[0]))}")
         return g
 
     g = Gate(v, "cleared")
@@ -68,9 +80,9 @@ def assess(resp: VendorResponse, a: Assumptions, history: pd.DataFrame | None = 
     if certs:
         c = max(certs, key=lambda c: c.valid_until or "")
         if c.valid_until and c.valid_until < a.rfq_due_date:
-            conds.append(f"ISO 9001 certificate expired {c.valid_until}, before the RFQ due date")
+            conds.append(f"ISO 9001 certificate expired on {_d(c.valid_until)}, before the RFQ due date")
         elif c.source == "stated_in_response":
-            g.notes.append(f"ISO 9001 valid to {c.valid_until} (stated; copy not attached)")
+            g.notes.append(f"ISO 9001 valid to {_d(c.valid_until)} (number stated; copy not attached)")
     elif q1 is None or q1.status in ("no", "vague", "not_answered"):
         fails.append("No verifiable ISO 9001 certificate")
     else:
@@ -79,7 +91,9 @@ def assess(resp: VendorResponse, a: Assumptions, history: pd.DataFrame | None = 
     for no in (2, 5):
         q = qs.get(no)
         if q is None or q.status in ("no", "vague", "not_answered"):
-            fails.append(f"Q{no} not met: {q.answer_text if q else 'not answered'}"[:120])
+            what = {2: "test report with every lot", 5: "food-safe inks"}[no]
+            said = (q.answer_text or "").strip() if q else ""
+            fails.append(f"Q{no} ({what}) not met: " + (f"“{said[:90]}”" if said else "not answered"))
 
     days = _max_days((qs[4].answer_text if 4 in qs else None) or resp.lead_time_text)
     if days is None:

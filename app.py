@@ -28,6 +28,8 @@ from core.rfq import Assumptions
 from core.voice import voice_input
 
 st.set_page_config(page_title="RFQ Copilot", layout="wide")
+st.markdown("<style>section[data-testid='stSidebar']{width:440px !important; min-width:440px !important;}</style>",
+            unsafe_allow_html=True)
 
 STEPS = [("draft", "Draft RFQ"), ("send", "Send"), ("responses", "Responses"),
          ("review", "Review"), ("compare", "Compare"), ("award", "Award")]
@@ -69,6 +71,8 @@ ss.setdefault("decisions", Decisions())
 ss.setdefault("ask_queue", {})       # vendor → list of points to send back
 ss.setdefault("sent_emails", [])     # follow-ups sent during review
 ss.setdefault("mic_n", 0)
+ss.setdefault("uploads", {})         # vendor → [file paths] added by the buyer
+ss.setdefault("ack_unplaced", set()) # vendors whose unmatched items the buyer has dealt with
 _DEF = Assumptions()
 WIDGETS = {"a_fx": "fx_usd_inr", "a_freight": "freight_per_kg", "a_gst": "gst_rate",
            "a_disc": "apply_conditional_discounts", "a_size": "size_deviation_review", "a_band": "price_sanity_band"}
@@ -102,6 +106,28 @@ def client() -> anthropic.Anthropic:
 
 def money(x: float) -> str:
     return f"₹{x/1e5:,.1f} L"
+
+
+def crore(x: float) -> str:
+    return f"₹{x/1e7:,.2f} Cr"
+
+
+def inr(x: float | int | None, dec: int = 0) -> str:
+    """Indian digit grouping: 1,23,45,678."""
+    if x is None:
+        return ""
+    neg, x = x < 0, abs(x)
+    whole, frac = f"{x:.{dec}f}".split(".") if dec else (f"{x:.0f}", "")
+    head, tail = whole[:-3], whole[-3:]
+    while len(head) > 2:
+        tail = head[-2:] + "," + tail
+        head = head[:-2]
+    out = (head + "," + tail) if head else tail
+    return ("-" if neg else "") + out + (f".{frac}" if dec else "")
+
+
+def contact(v: str) -> tuple[str, str, str]:
+    return CONTACTS.get(v, ("Team", "", "email"))
 
 
 def key_of(*parts) -> str:
@@ -238,7 +264,7 @@ with st.sidebar:
                 send_chat(heard, voice=True)
                 st.rerun()
             st.error(f"Couldn't transcribe that ({err}). Please type it instead.")
-    prompt = st.chat_input("…or type here" if can_chat else "Chat opens after the review", disabled=not can_chat)
+    prompt = st.chat_input("…or type here" if can_chat else "Ask after the review", disabled=not can_chat)
     if prompt:
         with st.spinner("Thinking…"):
             send_chat(prompt)
@@ -313,13 +339,36 @@ elif ss.step == "responses":
     st.subheader("Vendor replies")
     if not ss.replies_in:
         st.info("RFQ sent on 21 Sep. Replies usually trickle in over the next nine days.")
-        if st.button("Simulate the replies arriving", type="primary"):
+        if st.button("Fast-forward 9 days: show the replies", type="primary"):
             ss.replies_in = True
             st.rerun()
     else:
         st.caption("Exactly as each vendor sent it. Nobody used our template.")
-        vt = st.tabs([f"{v} · {REPLIES[v]['channel']}" for v in VENDOR_FILES])
-        for tab, v in zip(vt, VENDOR_FILES):
+        all_v = list(VENDOR_FILES) + [u for u in ss.uploads if u not in VENDOR_FILES]
+        vt = st.tabs([f"{v} · {REPLIES[v]['channel']}" if v in REPLIES else f"{v} · uploaded" for v in all_v])
+        for tab, v in zip(vt, all_v):
+            if v not in REPLIES:
+                with tab:
+                    st.caption("Added by you. Shown as received.")
+                    for fp in ss.uploads[v]:
+                        fp = Path(fp)
+                        st.markdown(f"**📎 {fp.name}**")
+                        ext = fp.suffix.lower()
+                        try:
+                            if ext in (".jpg", ".jpeg", ".png", ".webp"):
+                                st.image(str(fp), width=420)
+                            elif ext in (".xlsx", ".xlsm"):
+                                for sheet, df_s in pd.read_excel(fp, sheet_name=None, header=None).items():
+                                    st.dataframe(df_s.fillna("").astype(str), hide_index=True, width="stretch", height=260)
+                            elif ext == ".pdf":
+                                st.caption("PDF attached (the AI reads the pages directly).")
+                            else:
+                                from core.readers import to_content_blocks
+                                st.text(to_content_blocks(fp)[1]["text"][:3000])
+                        except Exception as e:
+                            st.warning(f"Can't preview this file ({type(e).__name__}). The AI may still read it.")
+                    st.caption(f"Status: {ss.read_status.get(v, 'Not read yet')}")
+                continue
             r = REPLIES[v]
             files = VENDOR_FILES[v]
             with tab:
@@ -356,7 +405,7 @@ elif ss.step == "responses":
 
         if not is_read:
             st.write("")
-            if st.button("Read all 5 replies with AI", type="primary", disabled=not api_key_present()):
+            if st.button("Read all 5 replies with AI (about a minute)", type="primary", disabled=not api_key_present()):
                 box = st.status("Reading all five in parallel… about a minute", expanded=True)
                 with ThreadPoolExecutor(max_workers=5) as pool:
                     futs = {pool.submit(read_and_match, v, [INBOX / f for f in fs], lines): v for v, fs in VENDOR_FILES.items()}
@@ -380,6 +429,34 @@ elif ss.step == "responses":
                 "Lines matched": f"{sum(1 for l in lines if (v, l.code) in comp.cells)} / {len(lines)}",
                 "Quality gate": comp.gates[v].label, "Status": ss.read_status[v]} for v in resps]),
                 hide_index=True, width="stretch")
+            with st.expander("A vendor sent something else? Add their reply (any format)"):
+                up_name = st.text_input("Vendor name", placeholder="Sharma Cartons", key="up_name")
+                up_files = st.file_uploader("Files: Excel, PDF, Word, photo, email or text", accept_multiple_files=True,
+                                            type=["xlsx", "pdf", "docx", "jpg", "jpeg", "png", "eml", "txt", "csv"], key="up_files")
+                name = (up_name or "").strip()
+                clash = name.lower() in {x.lower() for x in VENDOR_FILES}
+                if clash:
+                    st.caption("That vendor already replied. Use a different name.")
+                if st.button("Read this reply with AI", disabled=not (api_key_present() and name and up_files and not clash)):
+                    dest = INBOX / "uploads" / key_of(name, datetime.now().isoformat())
+                    dest.mkdir(parents=True, exist_ok=True)
+                    paths = []
+                    for f in up_files:
+                        fp = dest / Path(f.name).name
+                        fp.write_bytes(f.getvalue())
+                        paths.append(fp)
+                    with st.spinner(f"Reading {name}'s reply… usually 20–60 seconds"):
+                        try:
+                            read_and_match(name, paths, lines)
+                            ss.uploads[name] = [str(x) for x in paths]
+                            ss.read_status[name] = "Read live by AI (you added it)"
+                            decide("upload", name, [], files=[x.name for x in paths])
+                            ss.step = "review"
+                            ss.chat.append({"role": "assistant", "text": f"Read {name}'s reply. Anything I'm unsure about is on the Review step."})
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"Couldn't read {name}'s files ({type(e).__name__}). The file may be damaged, empty or "
+                                     "password-protected. Ask the vendor to resend, or try another format.")
             if st.button("Next: review what needs a decision →", type="primary"):
                 go("review")
                 st.rerun()
@@ -387,14 +464,35 @@ elif ss.step == "responses":
 # ================================================================= 4. Review
 elif ss.step == "review":
     groups = review_groups()
+    unplaced = {v: items for v, items in comp.unplaced.items() if items and v not in ss.ack_unplaced}
     total_decided = len(d.approved) + len(d.corrected) + len(d.excluded) + len(d.asked)
     queued = {v: pts for v, pts in ss.ask_queue.items() if pts}
     st.subheader("Review")
     st.caption("Only what the AI isn't sure about. Clean prices go straight through. Finish this before comparing.")
     m1, m2, m3 = st.columns(3)
-    m1.metric("Still to decide", len(groups))
+    m1.metric("Still to decide", len(groups) + len(unplaced))
     m2.metric("Questions waiting to be emailed", sum(len(p) for p in queued.values()))
     m3.metric("Emails sent to vendors", len(ss.sent_emails))
+
+    for v, items in unplaced.items():
+        k = key_of(v, "unplaced")
+        with st.container(border=True):
+            st.markdown(f"{SEV['risk']} · **{v}** · {len(items)} quoted item(s) couldn't be matched to any of our lines")
+            st.caption("They're left out of the comparison until you decide. Check whether they're items we asked for.")
+            for it in items[:8]:
+                st.markdown(f"- “{it.description}” · {it.price_text}")
+            b1, b2 = st.columns(2)
+            if b1.button("Leave them out", key=f"ack-{k}", width="stretch"):
+                ss.ack_unplaced.add(v)
+                decide("leave_out_unmatched", v, [], items=[it.description for it in items])
+                st.rerun()
+            if b2.button("Ask vendor", key=f"askun-{k}", width="stretch"):
+                ss.ack_unplaced.add(v)
+                ss.ask_queue.setdefault(v, []).append(
+                    "We couldn't match these items to our RFQ lines. Please tell us which of our item codes each one is: "
+                    + "; ".join(f"“{it.description}” ({it.price_text})" for it in items[:8]))
+                decide("ask_vendor_unmatched", v, [])
+                st.rerun()
 
     order = sorted(groups.items(), key=lambda kv: (kv[0][1] != "risk", kv[0][0], kv[0][2]))
     for (v, sev, text), codes in order:
@@ -438,7 +536,7 @@ elif ss.step == "review":
         st.markdown("#### Emails to vendors")
         for v, pts in queued.items():
             with st.container(border=True):
-                st.markdown(f"**To {CONTACTS[v][0]}, {v}** ({CONTACTS[v][2]})")
+                st.markdown(f"**To {contact(v)[0]}, {v}** ({contact(v)[2]})")
                 kind = st.radio("Purpose", ["clarify", "confirm"], horizontal=True, key=f"kind-{v}",
                                 format_func=lambda x: {"clarify": "Ask for details", "confirm": "Confirm our reading"}[x])
                 tk = f"mail-{v}"
@@ -466,13 +564,13 @@ elif ss.step == "review":
                 st.text(e["body"])
 
     st.write("")
-    if groups:
-        st.info(f"{len(groups)} item(s) still need a decision before you can compare.")
+    if groups or unplaced:
+        st.info(f"{len(groups) + len(unplaced)} item(s) still need a decision before you can compare.")
     elif queued:
         st.info("Send the queued vendor emails to finish the review.")
     else:
         st.success("Review complete. Lines you asked vendors about stay marked until they reply.")
-    if st.button("Next: compare the quotes →", type="primary", disabled=bool(groups or queued)):
+    if st.button("Next: compare the quotes →", type="primary", disabled=bool(groups or queued or unplaced)):
         go("compare")
         ss.chat.append({"role": "assistant", "text": "Review done. Ask me anything about the quotes, by voice or by typing."})
         st.rerun()
@@ -496,27 +594,51 @@ elif ss.step == "compare":
         if g.reasons:
             col.caption(g.reasons[0])
 
-    df = pd.DataFrame([{**{"Code": l.code, "Item": l.description, "Qty": l.annual_qty, "Last yr": l.ly_price},
-                        **{v: (comp.cells[(v, l.code)].price if (v, l.code) in comp.cells else None) for v in comp.vendors},
-                        "Winner": winners.get(l.code, ("–",))[0]} for l in lines])
+    def cell_text(v, l):
+        c = comp.cells.get((v, l.code))
+        if c is None:
+            return "Not quoted"
+        if c.price is None:
+            return "Excluded" if (v, l.code) in d.excluded else "Can't compare"
+        return f"{c.price:,.2f}" + (" ?" if comp.awaiting_vendor(v, l.code, d) else "")
+
+    df = pd.DataFrame([{**{"Code": l.code, "Item": l.description, "Qty": inr(l.annual_qty),
+                           "Last yr": f"{l.ly_price:,.2f}" if l.ly_price else "New",
+                           "L1": winners.get(l.code, ("No eligible quote",))[0]},
+                        **{v: cell_text(v, l) for v in comp.vendors}} for l in lines])
+    tot_row = {"Code": "Total", "Item": "Quoted lines only", "Qty": "", "Last yr": "", "L1": ""}
+    for v in comp.vendors:
+        q_lines = [l for l in lines if (v, l.code) in comp.cells and comp.cells[(v, l.code)].price is not None]
+        tot_row[v] = f"{money(sum(comp.cells[(v, l.code)].price * l.annual_qty for l in q_lines))} · {len(q_lines)}/{len(lines)}"
+    df = pd.concat([df, pd.DataFrame([tot_row])], ignore_index=True)
 
     def styles(_):
         css = pd.DataFrame("", index=df.index, columns=df.columns)
         for i, l in enumerate(lines):
             for v in comp.vendors:
+                if df.loc[i, v] in ("Not quoted", "Excluded", "Can't compare"):
+                    css.loc[i, v] = "color: #8a8a8a; font-style: italic"
                 if comp.awaiting_vendor(v, l.code, d):
                     css.loc[i, v] = "background-color: rgba(30, 120, 255, 0.18)"
                 if winners.get(l.code, (None,))[0] == v:
                     css.loc[i, v] = "background-color: rgba(46, 160, 67, 0.28); font-weight: 600"
+        css.iloc[-1, :] = "font-weight: 600; background-color: rgba(128,128,128,0.08)"
         return css
 
-    st.caption("Green = cheapest allowed. Blue = waiting on the vendor's reply. — = not quoted. Click a price to see how it was worked out.")
-    ev = st.dataframe(df.style.apply(styles, axis=None).format(
-        {**{v: "{:,.2f}" for v in comp.vendors}, "Last yr": "{:,.2f}", "Qty": "{:,}"}, na_rep="—"),
-        hide_index=True, width="stretch", height=560, on_select="rerun", selection_mode="single-cell", key="grid")
+    st.caption("Green = cheapest allowed (L1). “?” and blue = waiting on the vendor's reply. “Not quoted” = the vendor "
+               "skipped this line; it's left out of their total, never counted as zero. Click a price to see how it was worked out.")
+    ev = st.dataframe(df.style.apply(styles, axis=None).set_properties(subset=comp.vendors + ["Qty", "Last yr"], **{"text-align": "right"}),
+        hide_index=True, width="stretch", height=600, on_select="rerun", selection_mode="single-cell", key="grid",
+        column_config={"Code": st.column_config.TextColumn(width=70), "Item": st.column_config.TextColumn(width=170),
+                       "Qty": st.column_config.TextColumn(width=78), "Last yr": st.column_config.TextColumn(width=62),
+                       "L1": st.column_config.TextColumn(width=96),
+                       **{v: st.column_config.TextColumn(width=96) for v in comp.vendors}})
+    st.caption("Totals row: each vendor's total on the lines they quoted, with coverage. Don't compare totals across "
+               "different line counts; use the L1 column or ask the co-pilot.")
     sel = ev.selection.cells if ev and ev.selection else []
     if sel:
         row_i, col = sel[0]
+    if sel and row_i < len(lines):
         l, v = lines[row_i], (sel[0][1] if sel[0][1] in comp.vendors else None)
         with st.container(border=True):
             if v is None:
@@ -527,7 +649,7 @@ elif ss.step == "compare":
                 c = comp.cells[(v, l.code)]
                 st.markdown(f"**{v} · {l.code} {l.description}** ({l.dims_label} mm, {l.ply}-ply)")
                 left, right = st.columns([3, 2])
-                left.dataframe(pd.DataFrame([{"Step": s.label, "₹ / value": round(s.value, 4), "Unit": s.unit} for s in c.steps]),
+                left.dataframe(pd.DataFrame([{"Step": s.label, "Value": round(s.value, 2), "Unit": s.unit} for s in c.steps]),
                                hide_index=True, width="stretch")
                 right.markdown(f"**Vendor's words** ({', '.join(resps[v].source_files)})")
                 if c.evidence:
@@ -540,7 +662,7 @@ elif ss.step == "compare":
                     st.caption(f"Also offered an alternate spec at ₹{alt.price:,.2f}/pc (not like-for-like).")
     with st.expander("Assumptions used (change one and every number updates)"):
         c1, c2 = st.columns(2)
-        c1.number_input("USD → INR", step=0.25, format="%.2f", key="a_fx")
+        c1.number_input("USD → INR (RBI reference rate, 30 Sep 2026, assumed)", step=0.25, format="%.2f", key="a_fx")
         c1.number_input("Freight estimate for ex-works quotes (₹/kg)", step=0.25, key="a_freight")
         c1.number_input("GST rate for inclusive quotes", step=0.01, format="%.2f", key="a_gst")
         c2.toggle("Apply conditional discounts (e.g. 'PO above ₹10L')", key="a_disc")
@@ -561,14 +683,30 @@ elif ss.step == "award":
     k1.metric("Annual cost", money(tot))
     k2.metric("Saving vs last year", money(ly_same - tot))
     k3.metric("Lines awarded", f"{len(wins)} / {len(lines)}")
-    award_df = pd.DataFrame([{"Code": c, "Item": by_code[c].description, "Vendor": v, "₹/pc": round(p, 2),
+    _award_rows = [{"Code": c, "Item": by_code[c].description, "Vendor": v, "₹/pc": round(p, 2),
                               "Annual qty": by_code[c].annual_qty, "Annual cost (₹)": round(p * by_code[c].annual_qty),
                               "Last-year ₹/pc": by_code[c].ly_price,
-                              "Waiting on vendor": "yes" if comp.awaiting_vendor(v, c, d) else ""} for c, (v, p) in wins.items()])
+                              "Waiting on vendor": "yes" if comp.awaiting_vendor(v, c, d) else ""} for c, (v, p) in wins.items()]
+    award_df = pd.DataFrame(_award_rows)
     split = award_df.groupby("Vendor").agg(Lines=("Code", "count"), **{"Annual cost (₹)": ("Annual cost (₹)", "sum")}).reset_index()
+    split = split.sort_values("Annual cost (₹)", ascending=False)
+    parts = " and ".join(f"{r.Lines} line{'s' if r.Lines > 1 else ''} to {r.Vendor}" for r in split.itertuples())
+    st.markdown(f"#### Award {parts}: **{crore(tot)}** a year, **{money(ly_same - tot)}** "
+                f"{'below' if ly_same >= tot else 'above'} last year.")
+    if scope_a == "Cleared only":
+        alt = l1(comp, ALLOWED["Cleared + conditional"])
+        alt_tot = award_total(comp, alt)
+        cond_v = sorted({v for v, _ in alt.values() if comp.gates[v].status == "conditional"})
+        if cond_v and alt_tot < tot - 1:
+            why = "; ".join(f"{v}: {comp.gates[v].reasons[0]}" for v in cond_v if comp.gates[v].reasons)
+            st.info(f"**If {', '.join(cond_v)} fix{'es' if len(cond_v) == 1 else ''} the open quality issue, the award drops to "
+                    f"{crore(alt_tot)}: {money(tot - alt_tot)} a year cheaper.** {why}. "
+                    f"Worth asking for before you sign.")
+    shown = split.assign(**{"Annual cost (₹)": split["Annual cost (₹)"].map(inr)})
     cA, cB = st.columns([2, 3])
-    cA.dataframe(split, hide_index=True, width="stretch")
-    fig = px.bar(split, x="Vendor", y="Annual cost (₹)", title="Award value by vendor")
+    cA.dataframe(shown, hide_index=True, width="stretch")
+    fig = px.bar(split.assign(lakh=split["Annual cost (₹)"] / 1e5), x="Vendor", y="lakh",
+                 title="Award value by vendor", labels={"lakh": "₹ lakh"})
     fig.update_layout(height=250, margin=dict(l=10, r=10, t=40, b=10))
     cB.plotly_chart(fig, width="stretch")
     conds = []
@@ -590,7 +728,8 @@ elif ss.step == "award":
     for c_ in conds or ["Nothing outstanding"]:
         st.markdown(f"- {c_}")
     with st.expander("Award by line"):
-        st.dataframe(award_df, hide_index=True, width="stretch")
+        st.dataframe(award_df.assign(**{"Annual qty": award_df["Annual qty"].map(inr),
+                                        "Annual cost (₹)": award_df["Annual cost (₹)"].map(inr)}), hide_index=True, width="stretch")
     buf = io.BytesIO()
     with pd.ExcelWriter(buf) as xw:
         award_df.to_excel(xw, index=False, sheet_name="Award by line")

@@ -11,3 +11,7 @@ __pycache__/
 # Local data
 *.duckdb
 *.duckdb.wal
+
+# Buyer decisions and uploads are runtime data
+data/corrections.jsonl
+data/inbox/uploads/

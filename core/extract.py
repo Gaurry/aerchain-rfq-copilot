@@ -113,7 +113,8 @@ def load_ai_matches() -> dict[str, list[AIMatch]]:
     out = {}
     for p in sorted(OUT.glob("*.json")):
         d = json.loads(p.read_text())
-        out[d["response"]["vendor_name"]] = [AIMatch.model_validate(m) for m in d.get("ai_matches", [])]
+        out[d["response"]["vendor_name"]] = [AIMatch.model_validate(m) for m in d.get("ai_matches", [])
+                                             if m.get("rfq_code")]
     return out
 
 

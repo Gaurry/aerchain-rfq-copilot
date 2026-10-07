@@ -93,3 +93,18 @@ def load_rfq() -> list[RFQLine]:
 def load_vendor_history() -> pd.DataFrame:
     """Prior questionnaire answers on file (only Om Sai, the incumbent)."""
     return pd.read_excel(MASTER, sheet_name="Vendor History")
+
+
+def incumbents() -> set[str]:
+    """Vendor names (as on file) that held last year's contract, so 'same as last year' means something."""
+    try:
+        h = load_vendor_history()
+    except Exception:
+        return set()
+    rows = h[(h["Item"].astype(str) == "Status") & h["Value"].astype(str).str.contains("ncumbent")]
+    return set(rows["Vendor"].astype(str))
+
+
+def is_incumbent(vendor: str) -> bool:
+    v = vendor.strip().lower()
+    return any(n.lower().startswith(v) or v.startswith(n.lower()) for n in incumbents())

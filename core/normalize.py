@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from .rfq import Assumptions, RFQLine
+from .rfq import Assumptions, RFQLine, is_incumbent
 from .schema import Match, PriceUnit, QuotedItem, VendorResponse
 
 
@@ -61,6 +61,10 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
 
     # --- base price, as quoted --------------------------------------------
     if item.price_unit == PriceUnit.same_as_last_year:
+        if not is_incumbent(resp.vendor_name):
+            F(Flag("risk", f"{resp.vendor_name} wrote '{item.price_text}', but we have no earlier prices from them. "
+                           "Not comparable until they send rates"))
+            return out
         if line.ly_price is None:
             F(Flag("risk", "'Same as last year' but this line has no last-year price"))
             return out
@@ -83,7 +87,8 @@ def normalize(line: RFQLine, resp: VendorResponse, item: QuotedItem, match: Matc
         if cur == "USD":
             v *= a.fx_usd_inr
             S(Step(f"Convert USD at ₹{a.fx_usd_inr:.2f}", v, "₹"))
-            F(Flag("review", f"USD quote, FX assumed ₹{a.fx_usd_inr:.2f}; invoice rate may differ"))
+            F(Flag("review", f"Quoted in USD; converted at ₹{a.fx_usd_inr:.2f} (RBI reference rate, 30 Sep 2026, assumed). "
+                             "Invoice rate may differ"))
         elif cur not in ("INR",):
             F(Flag("risk", f"Currency '{cur}' not recognised"))
 

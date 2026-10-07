@@ -49,6 +49,16 @@ Running list of what we decided, why, and what we left out. Updated as we build.
 - **An unmarked price inherits the response's currency, with a review flag.** Gupta's handwritten pad price has no ₹ next to it; the rest of his card is INR.
 - **Every price cell opens its working:** the ledger, the vendor's own words, match confidence and flags.
 
+## Fixes after the audit and UX review
+- **A silent failure became a loud one.** One live read in four, the word-matching step returned "high confidence" matches with no line code, and Pacific quietly dropped from 30 lines to 9. Now the code is required, a bad answer is retried once with the error, and anything still unmatched becomes a Risk card in Review ("N items couldn't be matched to our lines"). Four repeat runs: 21/21 each time.
+- **The analyst can filter by ply, type and size.** "Sabse sasta kaun hai 5-ply pe?" previously found 2 lines; it now finds all 13. "CB 100" still gets "no such line", not a guess.
+- **"Same as last year" only means something from the incumbent.** A new vendor writing "same as before" is now flagged as a risk and left out, instead of silently borrowing the incumbent's prices.
+- **Upload is back.** Any vendor's file (photo, PDF, Excel, Word, email, text) can be added on Responses, read live, and lands in Review.
+- **"Not quoted" in words, never "None", never zero,** plus a totals row with coverage (e.g. "₹384.1 L · 27/30") and the warning that totals across different line counts aren't comparable.
+- **Indian formats:** 1,23,45,678 grouping, ₹ lakh chart axes, dates as 15 Sep 2026; L1 shown per line.
+- **The award says what to do:** "Award 26 lines to Kraftline and 4 to Om Sai: ₹4.08 Cr", plus "If Shree Balaji fixes the open quality issue, the award drops to ₹3.95 Cr: ₹12.9 L cheaper."
+- **FX states its basis** (RBI reference rate, 30 Sep 2026, assumed, editable).
+
 ## Simplified flow (after first review of the app)
 - **One screen per step**, not seven tabs: Draft RFQ → Send → Responses → Review → Compare → Award. Earlier steps stay clickable; later ones unlock in order.
 - **Send shows the actual message per vendor** (email, or WhatsApp for Gupta) with the RFQ Excel attached as a real file: line items plus the questionnaire sheet.

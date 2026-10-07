@@ -111,7 +111,7 @@ class Match(BaseModel):
 
 class AIMatch(BaseModel):
     item_index: int
-    rfq_code: Optional[str] = None
+    rfq_code: str = Field(description="The RFQ line code this item matches, e.g. 'CB-304', or exactly 'NONE' if no line fits")
     confidence: Literal["high", "medium", "low"]
     reason: str
 

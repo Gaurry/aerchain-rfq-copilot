@@ -37,6 +37,7 @@ class Comparison:
     cells: dict          # (vendor, code) → NormalizedPrice (primary quote)
     alternates: dict     # (vendor, code) → NormalizedPrice
     unmatched: dict      # vendor → list[QuotedItem]
+    unplaced: dict       # vendor → priced items described only in words that no line could be matched to
     gates: dict          # vendor → Gate
     responses: dict      # vendor → VendorResponse
 
@@ -56,10 +57,12 @@ def build(resps: dict[str, VendorResponse], ai: dict[str, list[AIMatch]], lines:
           a: Assumptions, d: Decisions | None = None) -> Comparison:
     d = d or Decisions()
     by = {l.code: l for l in lines}
-    cells, alts, unmatched, gates = {}, {}, {}, {}
+    cells, alts, unmatched, unplaced, gates = {}, {}, {}, {}, {}
     for v, r in resps.items():
         ms, um = match_vendor(r, lines, ai.get(v))
         unmatched[v] = [r.items[i] for i in um]
+        unplaced[v] = [r.items[i] for i in um if r.items[i].scope == "single_item" and not r.items[i].is_alternate_spec
+                       and not r.items[i].size_as_written and r.items[i].price_value is not None]
         gates[v] = assess(r, a)
         for m in ms:
             it = r.items[m.item_index]
@@ -73,7 +76,7 @@ def build(resps: dict[str, VendorResponse], ai: dict[str, list[AIMatch]], lines:
             n.price = float(d.corrected[(v, code)])
             n.steps.append(Step("Buyer corrected the value", n.price, "₹/pc"))
             n.flags.append(Flag("info", "Corrected by the buyer"))
-    return Comparison(lines, list(resps), cells, alts, unmatched, gates, resps)
+    return Comparison(lines, list(resps), cells, alts, unmatched, unplaced, gates, resps)
 
 
 ALLOWED = {
